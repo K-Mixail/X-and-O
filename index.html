@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра: крестики / нолики</title>
+
+    <!-- подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    
+    <!-- подключаем стили: -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+</head>
+
+<body>
+    
+  <header class="header">
+      <div class="container">
+          <h1 class="title">Крестики / нолики</h1>
+      </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Настройки:</h2>
+      <form action="">
+        <fieldset>
+          <legend class="section-subtitle">Выберите размер поля</legend>
+          <label>
+            <input type="radio" name="size" checked>
+            3х3
+          </label>
+          <label>
+            <input type="radio" name="size">
+            4х4
+          </label>
+          <label>
+            <input type="radio" name="size">
+            5х5
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend class="section-subtitle">Выберите режим игры</legend>
+          <label>
+            <input type="radio" name="type" checked>
+            Одиночная игра
+          </label>
+          <label>
+            <input type="radio" name="type">
+            Игра с ПК
+          </label>
+        </fieldset>
+          <fieldset>
+              <legend class="section-subtitle">Выберите уровень сложности:</legend>
+              <label>
+                <input type="radio" name="leve" checked>
+                Простой
+              </label>
+              <label>
+                <input type="radio" name="leve">
+                Средний
+              </label>
+              <label>
+                <input type="radio" name="leve">
+                Тяжелый
+              </label>
+          </fieldset>
+            <button class="btn btn--primary">Начать игру</button>
+            <button class="btn btn--secondary">Завершить игру</button>
+        </form>
+    </section>
+  </div>
+        <section>
+          <div class="container">
+            <div class="area">
+              <div class="cell" pos="1"></div>
+              <div class="cell" pos="2"></div>
+              <div class="cell" pos="3"></div>
+              <div class="cell" pos="4"></div>
+              <div class="cell" pos="5"></div>
+              <div class="cell" pos="6"></div>
+              <div class="cell" pos="7"></div>
+              <div class="cell" pos="8"></div>
+              <div class="cell" pos="9"></div>
+            </div>
+
+            <div class="currentPlayer">
+              <span>Сейчас ходит: <span id="curPlyr">X</span></span>
+            </div>
+
+            <div class="stat">
+              <table>
+                  <th colspan="2">Статистика:</th>
+                  <tr>
+                      <td>X</td>
+                      <td><span id="statX">0</span></td>
+                  </tr>
+                  <tr>
+                      <td>O</td>
+                      <td><span id="statO">0</span></td>
+                  </tr>
+                  <tr>
+                      <td>Ничьи</td>
+                      <td><span id="statD">0</span></td>
+                  </tr>
+              </table>
+          </div>
+
+          </div>
+        </section>
+
+    <footer></footer>
+    
+    <script src="scripts/script.js"></script>
+</body>
+</html>

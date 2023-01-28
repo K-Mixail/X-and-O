@@ -1,0 +1,234 @@
+/* общие свойства*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-dark); 
+    margin: 0;   
+}
+
+
+/*main colors*/
+:root {
+    --color-dark: #353535;
+    --color-white: #EFEFEF;
+    --color-grey: #A8A2A2;
+    --color-green: #2B4E50;
+    --color-light: #589eb4;    
+}
+
+/* layout */
+.container {
+    width: 1140px;
+    margin: 0 auto;   
+}
+
+.padding-left {
+    padding-left: 30px;
+}
+
+.section-padding {
+    padding-top: 50px;
+    padding-bottom: 120px;
+}
+
+.section-margin {
+    margin-bottom: 130px;
+}
+
+/* font-size for title */
+.title {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    height: 78;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 0;
+    padding: 0 0 50px;  /*отступ снизу*/
+}
+.page-header__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.section-subtitle-big {            
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+/*font-size for text*/
+.small-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.small-text--grey {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #A8A2A2;
+}
+
+.medium-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.big-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-ai-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-column-ai-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* clear */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;   
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+/* button */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border: 1px solid var(--color-grey);  
+    border-radius: 2px;
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn--primary {
+    background-color: var(--color-light);
+}
+
+.btn--secondary {
+    background-color: #e97917;
+}
+
+.btn--primary:hover {
+    border: 1px solid var(--color-white);
+}
+
+.btn--secondary:hover {
+    border: 1px solid var(--color-white);
+}
+
+
+/*СВОЙСТВА ДЛЯ САМОЙ СТРАНИЦЫ*/
+.header {
+    background-color: #d8a925;
+    height: 100px;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 50px;
+}
+
+/* Игровое поле */
+section {
+    margin-bottom: 50px;
+}
+
+.area {
+    width: 152px;
+    border: 1px solid var(--color-dark); 
+    font-size: 0px; /*зануляем отступы между клетками*/
+
+}
+
+.cell {
+    width: 50px;    
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid var(--color-dark); 
+    display: inline-block; /*блоки выстраиваются из вертикального ряда в сетку 3х3*/
+    font-size: 26px; /*размер керстика/нолика*/
+    text-align: center;
+    vertical-align: middle; /*чтобы после нажатия на ячейку, не было смещений*/
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #fff;
+}
+
+.currentPlayer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
