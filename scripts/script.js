@@ -1,6 +1,44 @@
-const area = document.getElementsByClassName('area');
-const cell = document.getElementsByClassName('cell');
+let startGame = document.querySelector('.btn_start');
+let stopGame = document.querySelector('.btn_stop');
+let cell = document.getElementsByClassName('cell');
+let area = document.getElementsByClassName('area');
 let currentPlayer = document.getElementById('curPlyr');
+
+startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
+startGame.addEventListener('click',testToggleStart,false);
+stopGame.addEventListener('click',testToggleStop,false);
+stopGame.addEventListener('click',clear,true);
+
+// тестим визуализацией переключение кнопок
+/* startGame.addEventListener('click',testStart,false);
+stopGame.addEventListener('click',testStop,false);
+function testStart () {
+  alert('a');
+}
+function testStop () {
+  alert('ab');
+} */
+
+//реализация переключения кнопок
+function testToggleStart () {
+  startGame.setAttribute('disabled',true);
+  stopGame.removeAttribute('disabled');
+
+}
+function testToggleStop () {
+  stopGame.setAttribute('disabled',true);
+  startGame.removeAttribute('disabled');
+  cell.setAttribute('disabled',true); // не блокирует ячейки после стопа/////////////////////////
+}
+
+function clear () {    
+  for(let i = 0; i < cell.length; i++) {
+      cell[i].innerHTML = '';
+  }
+}
+
+
+function testF () { 
 
 let player = "x"; //начальный игрок (let т.к. Х будет меняться на 0)
 
@@ -99,3 +137,8 @@ function updateStat() {
   document.getElementById('statO').innerHTML = stat.o;
   document.getElementById('statD').innerHTML = stat.d;
 }
+
+}
+
+
+
