@@ -8,38 +8,34 @@ let oneGame = document.querySelector('.section--one_game');
 startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
 startGame.addEventListener('click',testToggleStart,false);
 stopGame.addEventListener('click',testToggleStop,false);
-stopGame.addEventListener('click',clear,true);
+stopGame.addEventListener('click',clearCell,true);
+stopGame.addEventListener('click',clearStat,true);
 
-// тестим визуализацией переключение кнопок
-/* startGame.addEventListener('click',testStart,false);
-stopGame.addEventListener('click',testStop,false);
-function testStart () {
-  alert('a');
-}
-function testStop () {
-  alert('ab');
-} */
 
 //реализация переключения кнопок
 function testToggleStart () {
   oneGame.removeAttribute('hidden');
   startGame.setAttribute('disabled',true);
   stopGame.removeAttribute('disabled');
-
 }
+
 function testToggleStop () {
   oneGame.setAttribute('hidden',true);
   stopGame.setAttribute('disabled',true);
   startGame.removeAttribute('disabled');
-  cell.setAttribute('disabled',true); // не блокирует ячейки после стопа/////////////////////////
 }
 
-function clear () {    
+function clearCell () {    
   for(let i = 0; i < cell.length; i++) {
       cell[i].innerHTML = '';
   }
 }
 
+function clearStat() {
+  document.getElementById('statX').innerHTML = 0;
+  document.getElementById('statO').innerHTML = 0;
+  document.getElementById('statD').innerHTML = 0;
+}
 
 function testF () { 
 
