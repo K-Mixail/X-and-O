@@ -1,8 +1,8 @@
 let startGame = document.querySelector('.btn_start');
 let stopGame = document.querySelector('.btn_stop');
-let cell = document.getElementsByClassName('cell');
-let area = document.getElementsByClassName('area');
-let currentPlayer = document.getElementById('curPlyr');
+let cell = document.querySelectorAll('.cell');
+let area = document.querySelector('.area');
+let currentPlayer = document.querySelector('#curPlyr');
 
 startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
 startGame.addEventListener('click',testToggleStart,false);
