@@ -3,6 +3,7 @@ let stopGame = document.querySelector('.btn_stop');
 let cell = document.querySelectorAll('.cell');
 let area = document.querySelector('.area');
 let currentPlayer = document.querySelector('#curPlyr');
+let oneGame = document.querySelector('.section--one_game');
 
 startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
 startGame.addEventListener('click',testToggleStart,false);
@@ -21,11 +22,13 @@ function testStop () {
 
 //реализация переключения кнопок
 function testToggleStart () {
+  oneGame.removeAttribute('hidden');
   startGame.setAttribute('disabled',true);
   stopGame.removeAttribute('disabled');
 
 }
 function testToggleStop () {
+  oneGame.setAttribute('hidden',true);
   stopGame.setAttribute('disabled',true);
   startGame.removeAttribute('disabled');
   cell.setAttribute('disabled',true); // не блокирует ячейки после стопа/////////////////////////
