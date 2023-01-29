@@ -5,11 +5,11 @@ let area = document.querySelector('.area');
 let currentPlayer = document.querySelector('#curPlyr');
 let oneGame = document.querySelector('.section--one_game');
 
+
+// показать/скрыть уровни сложности при разных режимах игры
 let chooseLvl = document.querySelector('#choose-lvl');
 let gamePC = document.querySelector('#PC-game');
 let gameOne = document.querySelector('#ONE-game');
-
-// показать/скрыть уровни сложности при разных режимах игры
 gameOne.addEventListener('click',testOff,true);
 gamePC.addEventListener('click',testOn,true);
 function testOff () {
@@ -20,36 +20,31 @@ function testOn () {
 }
 
 startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
-startGame.addEventListener('click',testToggleStart,false);
-stopGame.addEventListener('click',testToggleStop,false);
-stopGame.addEventListener('click',clearCell,true);
-stopGame.addEventListener('click',clearStat,true);
+startGame.addEventListener('click',toggleStart,false);
+stopGame.addEventListener('click',toggleStop,false);
+stopGame.addEventListener('click',clear,true);
 
 
-//реализация переключения кнопок
-function testToggleStart () {
+//реализация переключения кнопок и очистки полей/статистики
+function toggleStart () {
   oneGame.removeAttribute('hidden');
   startGame.setAttribute('disabled',true);
   stopGame.removeAttribute('disabled');
 }
-
-function testToggleStop () {
+function toggleStop () {
   oneGame.setAttribute('hidden',true);
   stopGame.setAttribute('disabled',true);
   startGame.removeAttribute('disabled');
 }
-
-function clearCell () {    
+function clear () {    
   for(let i = 0; i < cell.length; i++) {
       cell[i].innerHTML = '';
   }
-}
-
-function clearStat() {
   document.getElementById('statX').innerHTML = 0;
   document.getElementById('statO').innerHTML = 0;
   document.getElementById('statD').innerHTML = 0;
 }
+
 
 function testF () { 
 
