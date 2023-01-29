@@ -184,13 +184,13 @@ a {
 
 .btn--primary:disabled {
     background-color: #cecac7;
-    cursor: default;
+    cursor: not-allowed;
     border:none;
 }
 
 .btn--secondary:disabled {
     background-color: #cecac7;
-    cursor: default;
+    cursor: not-allowed;
     border:none;
 }
 

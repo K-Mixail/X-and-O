@@ -30,7 +30,7 @@
       <h2>Настройки:</h2>
       <form action="">
         <fieldset>
-          <legend class="section-subtitle">Выберите размер поля</legend>
+          <legend class="section-subtitle">Выберите размер поля:</legend>
           <label>
             <input type="radio" name="size" checked>
             3х3
@@ -45,17 +45,17 @@
           </label>
         </fieldset>
         <fieldset>
-          <legend class="section-subtitle">Выберите режим игры</legend>
+          <legend class="section-subtitle">Выберите режим игры:</legend>
           <label>
-            <input type="radio" name="type" checked>
+            <input type="radio" name="type" id="ONE-game" checked>
             Одиночная игра
           </label>
           <label>
-            <input type="radio" name="type">
+            <input type="radio" name="type" id="PC-game">
             Игра с ПК
           </label>
         </fieldset>
-          <fieldset>
+          <fieldset id="choose-lvl" hidden>
               <legend class="section-subtitle">Выберите уровень сложности:</legend>
               <label>
                 <input type="radio" name="leve" checked>

@@ -5,6 +5,20 @@ let area = document.querySelector('.area');
 let currentPlayer = document.querySelector('#curPlyr');
 let oneGame = document.querySelector('.section--one_game');
 
+let chooseLvl = document.querySelector('#choose-lvl');
+let gamePC = document.querySelector('#PC-game');
+let gameOne = document.querySelector('#ONE-game');
+
+// показать/скрыть уровни сложности при разных режимах игры
+gameOne.addEventListener('click',testOff,true);
+gamePC.addEventListener('click',testOn,true);
+function testOff () {
+  chooseLvl.setAttribute('hidden', true);
+}
+function testOn () {
+  chooseLvl.removeAttribute('hidden');
+}
+
 startGame.addEventListener('click',testF,{once: true}); //{once: true} - функция выпол. только один раз
 startGame.addEventListener('click',testToggleStart,false);
 stopGame.addEventListener('click',testToggleStop,false);
