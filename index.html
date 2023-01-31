@@ -45,6 +45,17 @@
           </label>
         </fieldset>
         <fieldset>
+          <legend class="section-subtitle">Первым делают ход:</legend>
+          <label>
+            <input type="radio" name="player" checked>
+            Х
+          </label>
+          <label>
+            <input type="radio" name="player">
+            0
+          </label>
+        </fieldset>
+        <fieldset>
           <legend class="section-subtitle">Выберите режим игры:</legend>
           <label>
             <input type="radio" name="type" id="ONE-game" checked>
@@ -75,9 +86,9 @@
         <button class="btn btn--secondary btn_stop" disabled>Завершить игру</button>
     </section>
   </div>
-        <section class="section--one_game" hidden>
+        <section class="section--one_game_3x3">
           <div class="container">
-            <div class="area">
+            <div class="area" hidden>
               <div class="cell" pos="1"></div>
               <div class="cell" pos="2"></div>
               <div class="cell" pos="3"></div>
@@ -89,8 +100,92 @@
               <div class="cell" pos="9"></div>
             </div>
 
+            <div class="area-big" hidden>
+              <div class="cell" pos="1"></div>
+              <div class="cell" pos="2"></div>
+              <div class="cell" pos="3"></div>
+              <div class="cell" pos="4"></div>
+              <div class="cell" pos="5"></div>
+              <div class="cell" pos="6"></div>
+              <div class="cell" pos="7"></div>
+              <div class="cell" pos="8"></div>
+              <div class="cell" pos="9"></div>
+              <div class="cell" pos="10"></div>
+              <div class="cell" pos="11"></div>
+              <div class="cell" pos="12"></div>
+              <div class="cell" pos="13"></div>
+              <div class="cell" pos="14"></div>
+              <div class="cell" pos="15"></div>
+              <div class="cell" pos="16"></div>
+              <div class="cell" pos="17"></div>
+              <div class="cell" pos="18"></div>
+              <div class="cell" pos="19"></div>
+              <div class="cell" pos="20"></div>
+              <div class="cell" pos="21"></div>
+              <div class="cell" pos="22"></div>
+              <div class="cell" pos="23"></div>
+              <div class="cell" pos="24"></div>
+              <div class="cell" pos="25"></div>
+            </div>
+
+            <div class="options" hidden>
+              <div class="currentPlayer">
+                <span>Сейчас ходит: <span id="curPlyr">1ый игрок</span></span>
+              </div>
+
+              <div class="stat">
+                <table>
+                    <th colspan="2">Статистика:</th>
+                    <tr>
+                        <td>X</td>
+                        <td><span id="statX">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td><span id="statO">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ничьи</td>
+                        <td><span id="statD">0</span></td>
+                    </tr>
+                </table>
+              </div>
+          </div>
+          </div>
+        </section>
+
+        <!-- <section class="section--one_game_5x5" hidden>
+          <div class="container">
+            <div class="area-big">
+              <div class="cell" pos="1"></div>
+              <div class="cell" pos="2"></div>
+              <div class="cell" pos="3"></div>
+              <div class="cell" pos="4"></div>
+              <div class="cell" pos="5"></div>
+              <div class="cell" pos="6"></div>
+              <div class="cell" pos="7"></div>
+              <div class="cell" pos="8"></div>
+              <div class="cell" pos="9"></div>
+              <div class="cell" pos="10"></div>
+              <div class="cell" pos="11"></div>
+              <div class="cell" pos="12"></div>
+              <div class="cell" pos="13"></div>
+              <div class="cell" pos="14"></div>
+              <div class="cell" pos="15"></div>
+              <div class="cell" pos="16"></div>
+              <div class="cell" pos="17"></div>
+              <div class="cell" pos="18"></div>
+              <div class="cell" pos="19"></div>
+              <div class="cell" pos="20"></div>
+              <div class="cell" pos="21"></div>
+              <div class="cell" pos="22"></div>
+              <div class="cell" pos="23"></div>
+              <div class="cell" pos="24"></div>
+              <div class="cell" pos="25"></div>
+            </div>
+
             <div class="currentPlayer">
-              <span>Сейчас ходит: <span id="curPlyr">X</span></span>
+              <span>Сейчас ходит: <span id="curPlyr">1ый игрок</span></span>
             </div>
 
             <div class="stat">
@@ -112,7 +207,7 @@
           </div>
 
           </div>
-        </section>
+        </section> -->
 
     <footer></footer>
     

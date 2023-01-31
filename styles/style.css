@@ -223,7 +223,12 @@ section {
     width: 152px;
     border: 1px solid var(--color-dark); 
     font-size: 0px; /*зануляем отступы между клетками*/
+}
 
+.area-big {
+    width: 253px;
+    border: 1px solid var(--color-dark); 
+    font-size: 0px; /*зануляем отступы между клетками*/
 }
 
 .cell {
