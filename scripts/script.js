@@ -1,10 +1,11 @@
 let startGame = document.querySelector('.btn_start');
 let stopGame = document.querySelector('.btn_stop');
 let cell = document.querySelectorAll('.cell');
-let currentPlayer = document.querySelector('#curPlyr');
+let cellBig = document.querySelectorAll('.cell-big');
 let oneGame = document.querySelector('.area');
 let oneGameBig = document.querySelector('.area-big');
 let options = document.querySelector('.options');
+let currentPlayer = document.querySelector('#curPlyr');
 
 //массив с выигрышными положениями для 3х3
 const winIndex = [
@@ -103,18 +104,12 @@ function xxx () {
 
 //ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
 function testF () { 
-
   let player = "x"; 
-
-  //начальные значения статистики
   let stat = {
     'x': 0,
     'o': 0,
-    'd': 0  //ничья
+    'd': 0  
   }
-
-
-
   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
   for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('click', cellClick, true);
@@ -135,12 +130,11 @@ function testF () {
           data.push(parseInt(cell[i].getAttribute('pos')));
       }
     }
-
     //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
     if(checkWin(data)) {
       stat[player] += 1; //добавляем 1 к статистике победившего игрока
       restart("Выиграл: " + player);
-      player ="o" ;  // ЕСЛИ УБРАТЬ ЭТУ СТРОКУ - БУДЕТ ЧЕРЕДОВАНИЕ НАЧАЛЬНЫХ ХОДОВ !!!!!!!!!!!!!!!!!!!!
+      player = "o" ;  // ЕСЛИ УБРАТЬ ЭТУ СТРОКУ - БУДЕТ ЧЕРЕДОВАНИЕ НАЧАЛЬНЫХ ХОДОВ !!!!!!!!!!!!!!!!!!!!
     } else {
       var draw = true;
       for(var i in cell) {
@@ -151,12 +145,10 @@ function testF () {
           restart("Ничья");
       }
     } 
-
     player = player == "x" ? "o" : "x"; // после каждого хода меняем игрока
     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
   }
 
-  //функция для проверки победы
   function checkWin(data) {
     for(let i in winIndex) {
       let win = true;
@@ -172,7 +164,6 @@ function testF () {
     return false;
   }
 
-  //очищаем поле после каждой игры
   function restart(text) {    
     alert(text);
     for(let i = 0; i < cell.length; i++) {
@@ -180,7 +171,6 @@ function testF () {
     }
     updateStat();
   }
-
   function updateStat() {
     document.querySelector('#statX').innerHTML = stat.x;
     document.querySelector('#statO').innerHTML = stat.o;
