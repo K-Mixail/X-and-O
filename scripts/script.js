@@ -69,9 +69,6 @@ startGame.addEventListener('click',testF,{once: true}); //{once: true} - фун�
 startGame.addEventListener('click',toggleStart,false);
 stopGame.addEventListener('click',toggleStop,false);
 stopGame.addEventListener('click',clear,true);
-stopGame.addEventListener('click',xxx,true);
-
-
 
 //реализация переключения кнопок и очистки полей/статистики
 function toggleStart () {
@@ -90,16 +87,11 @@ function clear () {
   for(let i = 0; i < cell.length; i++) {
       cell[i].innerHTML = '';
   }
-  // document.querySelector('#statX').innerHTML = 0;
-  // document.querySelector('#statO').innerHTML = 0;
-  // document.querySelector('#statD').innerHTML = 0;
-}
-
-function xxx () {
   document.querySelector('#statX').innerHTML = 0;
   document.querySelector('#statO').innerHTML = 0;
   document.querySelector('#statD').innerHTML = 0;
 }
+
 
 
 //ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
