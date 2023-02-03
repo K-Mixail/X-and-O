@@ -64,11 +64,13 @@ function testOn () {
   chooseLvl.removeAttribute('hidden');
 }
 
-startGame.addEventListener('click',ThreeX,{once: true}); //{once: true} - функция выпол. только один раз
+startGame.addEventListener('click',threeO,{once: true}); //{once: true} - функция выпол. только один раз
 
 startGame.addEventListener('click',toggleStart,false);
 stopGame.addEventListener('click',toggleStop,false);
 stopGame.addEventListener('click',clear,true);
+stopGame.addEventListener('click',clearBig,true);
+
 
 //реализация переключения кнопок и очистки полей/статистики
 function toggleStart () {
@@ -90,11 +92,20 @@ function clear () {
   document.querySelector('#statX').innerHTML = 0;
   document.querySelector('#statO').innerHTML = 0;
   document.querySelector('#statD').innerHTML = 0;
+  
 }
 
+function clearBig () {    
+  for(let i = 0; i < cellBig.length; i++) {
+      cellBig[i].innerHTML = '';
+  }
+  document.querySelector('#statX').innerHTML = 0;
+  document.querySelector('#statO').innerHTML = 0;
+  document.querySelector('#statD').innerHTML = 0;
+}
 
-//ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
-function ThreeX () { 
+// ******************** ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
+function threeX () { 
   let player = "x"; 
   let stat = {
     'x': 0,
@@ -138,11 +149,9 @@ function ThreeX () {
       }
     } 
 
-    //player = player == "x" ? "o" : "x"; // после каждого хода меняем игрока
     if (player == "x") {
       player = "o";
     } else player = "x";
-
 
     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
   }
@@ -176,8 +185,8 @@ function ThreeX () {
   }
 }
 
-// *************************ОДИНОЧКА 3х3 Первый ход НОЛИКОМ******************************
-function ThreeO () { 
+// *************************ОДИНОЧКА 3х3 Первый ход НОЛИКОМ
+function threeO () { 
   let player = "o"; 
   let stat = {
     'x': 0,
@@ -220,7 +229,10 @@ function ThreeO () {
           player = "x";
       }
     } 
-    player = player == "o" ? "x" : "o"; // после каждого хода меняем игрока
+    if (player == "x") {
+      player = "o";
+    } else player = "x";
+
     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
   }
 
@@ -254,16 +266,175 @@ function ThreeO () {
 }
 
 
+// ******************** ОДИНОЧКА 5x5 Первый ход КРЕСТИКОМ
+function fiveX () { 
+  let player = "x"; 
+  let stat = {
+    'x': 0,
+    'o': 0,
+    'd': 0  
+  }
+  // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
+  for (let i = 0; i < cellBig.length; i++) {
+    cellBig[i].addEventListener('click', cellClick, true);
+  }
+
+  function cellClick() {  
+    let data = [];
+    //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+    if(!this.innerHTML) { 
+      this.innerHTML = player;
+    } else {
+      alert("Ячейка занята");
+      return;
+    }
+    //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+    for(let i in cellBig) {
+      if(cellBig[i].innerHTML == player) {
+          data.push(parseInt(cellBig[i].getAttribute('pos')));
+      }
+    }
+    //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+    if(checkWin(data)) {
+      stat[player] += 1; //добавляем 1 к статистике победившего игрока
+      restart("Выиграл: " + player);
+      player = "o" ;  
+    } else {
+      var draw = true;
+      for(var i in cell) {
+          if(cell[i].innerHTML == '') draw = false;
+      }
+      if(draw) {
+          stat.d += 1;
+          restart("Ничья");
+          player = "o" ;
+      }
+    } 
+
+    if (player == "x") {
+      player = "o";
+    } else player = "x";
+
+    currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+  }
+
+  function checkWin(data) {
+    for(let i in winIndexBig) {
+      let win = true;
+        for(let j in winIndexBig[i]) {
+          let id = winIndexBig[i][j];
+          let ind = data.indexOf(id);
+          if(ind == -1) {
+              win = false;
+          }
+        }
+        if(win) return true;
+    }
+    return false;
+  }
+
+  function restart(text) {    
+    alert(text);
+    for(let i = 0; i < cellBig.length; i++) {
+        cellBig[i].innerHTML = '';
+    }
+    updateStat();
+  }
+  function updateStat() {
+    document.querySelector('#statX').innerHTML = stat.x;
+    document.querySelector('#statO').innerHTML = stat.o;
+    document.querySelector('#statD').innerHTML = stat.d;
+  }
+}
+
+
+// ******************** ОДИНОЧКА 5x5 Первый ход НОЛИКОМ
+function fiveO () { 
+  let player = "o"; 
+  let stat = {
+    'x': 0,
+    'o': 0,
+    'd': 0  
+  }
+  // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
+  for (let i = 0; i < cellBig.length; i++) {
+    cellBig[i].addEventListener('click', cellClick, true);
+  }
+
+  function cellClick() {  
+    let data = [];
+    //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+    if(!this.innerHTML) { 
+      this.innerHTML = player;
+    } else {
+      alert("Ячейка занята");
+      return;
+    }
+    //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+    for(let i in cellBig) {
+      if(cellBig[i].innerHTML == player) {
+          data.push(parseInt(cellBig[i].getAttribute('pos')));
+      }
+    }
+    //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+    if(checkWin(data)) {
+      stat[player] += 1; //добавляем 1 к статистике победившего игрока
+      restart("Выиграл: " + player);
+      player = "x";  
+    } else {
+      var draw = true;
+      for(var i in cell) {
+          if(cell[i].innerHTML == '') draw = false;
+      }
+      if(draw) {
+          stat.d += 1;
+          restart("Ничья");
+          player = "x";
+      }
+    } 
+
+    if (player == "o") {
+      player = "x";
+    } else player = "o";
+
+    currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+  }
+
+  function checkWin(data) {
+    for(let i in winIndexBig) {
+      let win = true;
+        for(let j in winIndexBig[i]) {
+          let id = winIndexBig[i][j];
+          let ind = data.indexOf(id);
+          if(ind == -1) {
+              win = false;
+          }
+        }
+        if(win) return true;
+    }
+    return false;
+  }
+
+  function restart(text) {    
+    alert(text);
+    for(let i = 0; i < cellBig.length; i++) {
+        cellBig[i].innerHTML = '';
+    }
+    updateStat();
+  }
+  function updateStat() {
+    document.querySelector('#statX').innerHTML = stat.x;
+    document.querySelector('#statO').innerHTML = stat.o;
+    document.querySelector('#statD').innerHTML = stat.d;
+  }
+}
 
 
 
 
 
 
-
-
-
-// *************************БОТ-ПРОСТОЙ (РАНДОМ)******************************
+/* // *************************БОТ-ПРОСТОЙ (РАНДОМ)******************************
 
 function botRandom () { 
   let player = "x"; //начальный игрок (let т.к. Х будет меняться на 0)
@@ -368,4 +539,4 @@ function botRandom () {
     document.getElementById('statD').innerHTML = stat.d;
   }
   
- 
+  */
