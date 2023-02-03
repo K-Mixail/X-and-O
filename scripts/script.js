@@ -64,7 +64,7 @@ function testOn () {
   chooseLvl.removeAttribute('hidden');
 }
 
-startGame.addEventListener('click',ThreeO,{once: true}); //{once: true} - функция выпол. только один раз
+startGame.addEventListener('click',ThreeX,{once: true}); //{once: true} - функция выпол. только один раз
 
 startGame.addEventListener('click',toggleStart,false);
 stopGame.addEventListener('click',toggleStop,false);
@@ -103,10 +103,10 @@ function ThreeX () {
   }
   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
   for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', cellClickX, true);
+    cell[i].addEventListener('click', cellClick, true);
   }
 
-  function cellClickX() {  
+  function cellClick() {  
     let data = [];
     //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
     if(!this.innerHTML) { 
@@ -125,7 +125,7 @@ function ThreeX () {
     if(checkWin(data)) {
       stat[player] += 1; //добавляем 1 к статистике победившего игрока
       restart("Выиграл: " + player);
-      player = "o" ;  // ЕСЛИ УБРАТЬ ЭТУ СТРОКУ - БУДЕТ ЧЕРЕДОВАНИЕ НАЧАЛЬНЫХ ХОДОВ !!!!!!!!!!!!!!!!!!!!
+      player = "o" ;  
     } else {
       var draw = true;
       for(var i in cell) {
@@ -134,9 +134,16 @@ function ThreeX () {
       if(draw) {
           stat.d += 1;
           restart("Ничья");
+          player = "o" ;
       }
     } 
-    player = player == "x" ? "o" : "x"; // после каждого хода меняем игрока
+
+    //player = player == "x" ? "o" : "x"; // после каждого хода меняем игрока
+    if (player == "x") {
+      player = "o";
+    } else player = "x";
+
+
     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
   }
 
@@ -179,82 +186,6 @@ function ThreeO () {
   }
   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
   for (let i = 0; i < cell.length; i++) {
-    cell[i].addEventListener('click', cellClickO, true);
-  }
-
-  function cellClickO() {  
-    let data = [];
-    //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
-    if(!this.innerHTML) { 
-      this.innerHTML = player;
-    } else {
-      alert("Ячейка занята");
-      return;
-    }
-    //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
-    for(let i in cell) {
-      if(cell[i].innerHTML == player) {
-          data.push(parseInt(cell[i].getAttribute('pos')));
-      }
-    }
-    //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
-    if(checkWin(data)) {
-      stat[player] += 1; //добавляем 1 к статистике победившего игрока
-      restart("Выиграл: " + player);
-      player = "x" ;  // ЕСЛИ УБРАТЬ ЭТУ СТРОКУ - БУДЕТ ЧЕРЕДОВАНИЕ НАЧАЛЬНЫХ ХОДОВ !!!!!!!!!!!!!!!!!!!!
-    } else {
-      var draw = true;
-      for(var i in cell) {
-          if(cell[i].innerHTML == '') draw = false;
-      }
-      if(draw) {
-          stat.d += 1;
-          restart("Ничья");
-      }
-    } 
-    player = player == "o" ? "x" : "o"; // после каждого хода меняем игрока
-    currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
-  }
-
-  function checkWin(data) {
-    for(let i in winIndex) {
-      let win = true;
-        for(let j in winIndex[i]) {
-          let id = winIndex[i][j];
-          let ind = data.indexOf(id);
-          if(ind == -1) {
-              win = false;
-          }
-        }
-        if(win) return true;
-    }
-    return false;
-  }
-
-  function restart(text) {    
-    alert(text);
-    for(let i = 0; i < cell.length; i++) {
-        cell[i].innerHTML = '';
-    }
-    updateStat();
-  }
-  function updateStat() {
-    document.querySelector('#statX').innerHTML = stat.x;
-    document.querySelector('#statO').innerHTML = stat.o;
-    document.querySelector('#statD').innerHTML = stat.d;
-  }
-}
-
-// *************************ОДИНОЧКА 3х3 Чередование Первых Ходов******************************
-function Three () { 
-  let player = "x"; 
-  let stat = {
-    'x': 0,
-    'o': 0,
-    'd': 0  
-  }
-  // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
-  for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('click', cellClick, true);
   }
 
@@ -277,6 +208,7 @@ function Three () {
     if(checkWin(data)) {
       stat[player] += 1; //добавляем 1 к статистике победившего игрока
       restart("Выиграл: " + player);
+      player = "x";
     } else {
       var draw = true;
       for(var i in cell) {
@@ -285,6 +217,7 @@ function Three () {
       if(draw) {
           stat.d += 1;
           restart("Ничья");
+          player = "x";
       }
     } 
     player = player == "o" ? "x" : "o"; // после каждого хода меняем игрока
@@ -319,6 +252,8 @@ function Three () {
     document.querySelector('#statD').innerHTML = stat.d;
   }
 }
+
+
 
 
 
