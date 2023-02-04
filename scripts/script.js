@@ -1,3 +1,10 @@
+/* Дмитрий, ваши изменения сегодня (в сб) в строках: 17-21, 81, 83
+  то, что у меня закомменчено, скорее всего реализовывать НЕ буду
+ сейчас у меня 4 функции threeO threeX fiveX fiveO для каждого варианта игры
+ подставляя имя каждой из них в строку 80 (поочереди) всё работает
+ хотелось бы автоматизировать, привязав поля для выбора
+ */
+
 let startGame = document.querySelector('.btn_start');
 let stopGame = document.querySelector('.btn_stop');
 let cell = document.querySelectorAll('.cell');
@@ -6,6 +13,12 @@ let oneGame = document.querySelector('.area');
 let oneGameBig = document.querySelector('.area-big');
 let options = document.querySelector('.options');
 let currentPlayer = document.querySelector('#curPlyr');
+
+const game = document.querySelector('#game');
+game.addEventListener('submit', (event) => {
+  console.log(game);
+  event.preventDefault();
+})
 
 //массив с выигрышными положениями для 3х3
 const winIndex = [
@@ -52,7 +65,7 @@ const winIndexBig = [
 ];
 
 // показать/скрыть уровни сложности при разных режимах игры
-let chooseLvl = document.querySelector('#choose-lvl');
+/* let chooseLvl = document.querySelector('#choose-lvl');
 let gamePC = document.querySelector('#PC-game');
 let gameOne = document.querySelector('#ONE-game');
 gameOne.addEventListener('click',testOff,true);
@@ -62,12 +75,13 @@ function testOff () {
 }
 function testOn () {
   chooseLvl.removeAttribute('hidden');
-}
+} */
 
-startGame.addEventListener('click',threeO,{once: true}); //{once: true} - функция выпол. только один раз
 
-startGame.addEventListener('click',toggleStart,false);
-stopGame.addEventListener('click',toggleStop,false);
+// startGame.addEventListener('click',threeO,{once: true}); //{once: true} - функция выпол. только один раз
+
+// startGame.addEventListener('click',toggleStart,false); 
+stopGame.addEventListener('click',toggleStop);
 stopGame.addEventListener('click',clear,true);
 stopGame.addEventListener('click',clearBig,true);
 
@@ -187,6 +201,7 @@ function threeX () {
 
 // *************************ОДИНОЧКА 3х3 Первый ход НОЛИКОМ
 function threeO () { 
+
   let player = "o"; 
   let stat = {
     'x': 0,
