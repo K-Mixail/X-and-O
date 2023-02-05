@@ -23,7 +23,7 @@ body {
 
 /* layout */
 .container {
-    width: 320px;
+    width: 350px;
     margin: 0 auto;   
     display: flex;
     flex-direction: column;
