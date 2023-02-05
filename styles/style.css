@@ -30,28 +30,28 @@ body {
 
 /* font-size for title */
 .title {
-    font-family: 'Cormorant Garamond';
+    font-family: 'Garamond';
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
-    height: 78;
+    font-size: 35px;
+    line-height: 130%;
+    /* height: 78; */
     text-align: center;
 }
 
 .section-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Garamond', serif;
     font-weight: 700;
-    font-size: 50px;
-    line-height: 60px;
-    margin: 0;
-    padding: 0 0 50px;  /*отступ снизу*/
+    font-size: 30px;
+    line-height: 35px;
+    margin: 15px;
 }
 
 .section-subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Garamond', serif;
     font-weight: 700;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 20px;
+    line-height: 18px;
 }
 
 
@@ -149,12 +149,14 @@ ul {
     background-color: #cecac7;
     cursor: not-allowed;
     border:none;
+    font-weight: 400;
 }
 
 .btn--secondary:disabled {
     background-color: #cecac7;
     cursor: not-allowed;
     border:none;
+    font-weight: 400;
 }
 
 
@@ -223,6 +225,16 @@ section {
     margin-bottom: 15px;
 }
 
-td {
-    width: 120px;
+.row {
+    width: 130px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    border: 1px solid #353394; 
+    width: 160px;
+    text-align: center;
+
 }

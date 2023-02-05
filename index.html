@@ -29,7 +29,7 @@
     <section class="main">
       <form action="" id="game">
         <div class="choose">
-          <h2>Настройки:</h2>
+          <h2 class="section-title">Настройки:</h2>
           <fieldset class="choose--size">
             <legend class="section-subtitle">Выберите размер поля:</legend>
             <label>
@@ -45,11 +45,11 @@
             <legend class="section-subtitle">Первыми делают ход:</legend>
             <label>
               <input type="radio" name="player" value="x" checked>
-              Крестики
+              Крестики (X)
             </label>
             <label>
               <input type="radio" name="player" value="zero">
-              Нолики
+              Нолики (O)
             </label>
           </fieldset>
         </div>
@@ -106,21 +106,21 @@
               </div>
 
               <div class="stat">
-                <table>
-                    <th colspan="2">Статистика:</th>
-                    <tr>
-                        <td>Крестики (X):</td>
-                        <td><span id="statX">0</span></td>
-                    </tr>
-                    <tr>
-                        <td>Нолики (О):</td>
-                        <td><span id="statO">0</span></td>
-                    </tr>
-                    <tr>
-                        <td>Ничьи:</td>
-                        <td><span id="statD">0</span></td>
-                    </tr>
-                </table>
+                
+                    <h3 class="section-subtitle">Статистика:</h3>
+                    <div class="row">
+                        <span>Крестики (X):</span>
+                        <span id="statX">0</span>
+                    </div>
+                    <div class="row">
+                        <span>Нолики (О):</span>
+                        <span id="statO">0</span>
+                    </div>
+                    <div class="row">
+                        <span>Ничьи:</span>
+                        <span id="statD">0</span>
+                    </div>
+                
               </div>
           </div>
           </div>
