@@ -1,72 +1,8 @@
-@media screen and (max-width: 1363px) {
-
-
-  
-}
-
-
-
 @media screen and (max-width: 1200px) {
   /* На устройства 1024px*/
 
   /* Главная */
-
   
-
-  
-}
-
-@media screen and (max-width: 1010px) {
-
-    /* На устройства 768px*/
-
-    /* Главная */
-
-
-  .services__banner {
-    display: none;
-  }
-
-  .check:checked+::before {
-    display: none;
-  }
-
-  .services__container {
-    justify-content: center;
-  }
-
-  .service__item {
-    width: 517px;
-    height: 174px;
-  }
-
-  .ski-pass__img {
-    width: 306px;
-    height: 256px;
-  } 
-
-  .events {
-    padding: 30px;
-    height: 1350px;
-  }
-
-  .feedback img {
-    display: none;
-  }
-
-  .feedback__content {
-    width: 559px;
-  }
-
-  .feedback-form__row-submit {
-    width: 473px;
-    height: 60px;
-  }
-
-  .feedback-form__btn {
-    width: 236px;
-  }
-
 }
 
 
@@ -79,99 +15,6 @@
   /* Главная */
 
 
-  .section-title {
-    font-size: 40px;
-  }
-
-  .section-margin {
-    margin-bottom: 50px;
-  }
-
-  .section-padding {
-    padding-top: 20px;
-    padding-bottom: 50px;
-  }
-
-  .page-header__heading {
-    font-size: 40px;
-  }
-
-  .service__item {
-    width: 444px;
-  }
-
-  .ski-pass__block {
-    flex-direction: column-reverse;
-    align-items: center;
-    margin: auto;
-    gap: 30px;
-  }
-
-  .feedback__content {
-    width: 450px;
-    height: 500px;
-  }
-
-  .feedback-form__opposite {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .feedback-form__row-submit {
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100px;
-    width: 388px;
-  }
-
-  .feedback-form__title {
-    margin-bottom: 20px;
-    margin-top: 0;
-  }
-
-  .feedback-form__btn {
-    width: 390px;
-    height: 45px;
-  }
-
-  .checkbox__text  {
-    margin-left: 0;
-    width: 388px;
-  }
-
-  .feedback-form__terms {
-    width: 400px;
-  }
-
-  .page-footer__nav {
-    display: none;
-  }
-
-  .page-footer__bottom {
-    display: none;
-  }
-
-  .page-footer__mobile {
-    display: flex;
-    height: 60px;
-    align-items: center;
-  }
-
-  .page-footer__bottom-mobile {
-    display: flex;
-    height: 80px;
-    align-items: center;
-  }
-
-  .page-footer-line {
-    display: none;
-  }
-
-  .page-footer__sotial-media {
-    width: 90px;
-    align-items: center;
-  }
-
 }
 
 
@@ -179,30 +22,16 @@
 
 @media screen and (max-width: 450px) {
   /* На устройства 324px*/
-
+  .title {
+    font-size: 30px;
+  }
+  
   .section-title {
-    font-size: 34px;
+    font-size: 24px;
   }
 
-  .service__item {
-    width: 290px;
-    height: 182px;
-  }
-
-  .service__item p {
-    width: 240px;
-  }
-
-  .service__subtitle {
-    margin-bottom: 5px;
-  }
-
-  .small-text {
-    margin-top: 10px;
-  }
-
-  .big-text {
-    font-size: 16px;
+  .section-subtitle {
+    font-size: 18px;
   }
 
 }

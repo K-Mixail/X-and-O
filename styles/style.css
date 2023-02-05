@@ -46,7 +46,7 @@ body {
     font-family: 'Garamond', serif;
     font-weight: 700;
     font-size: 30px;
-    line-height: 35px;
+    line-height: 130%;
     margin: 15px;
 }
 
@@ -54,7 +54,7 @@ body {
     font-family: 'Garamond', serif;
     font-weight: 700;
     font-size: 20px;
-    line-height: 18px;
+    /* line-height: 18px; */
 }
 
 
