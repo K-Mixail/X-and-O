@@ -25,107 +25,104 @@
       </div>
   </header>
 
-  <div class="container">
-    <section class="main">
-      <form action="" id="game">
-        <div class="choose">
-          <h2 class="section-title">Настройки:</h2>
-          <fieldset class="choose--size">
-            <legend class="section-subtitle">Выберите размер поля:</legend>
-            <label>
-              <input type="radio" name="size" value="three" checked>
-              3х3
-            </label>
-            <label>
-              <input type="radio" name="size" value="five">
-              5х5
-            </label>
-          </fieldset>
-          <fieldset class="choose--player">
-            <legend class="section-subtitle">Первыми делают ход:</legend>
-            <label>
-              <input type="radio" name="player" value="x" checked>
-              Крестики (X)
-            </label>
-            <label>
-              <input type="radio" name="player" value="zero">
-              Нолики (O)
-            </label>
-          </fieldset>
-        </div>
-          <button class="btn btn--primary btn_start" type="submit">Начать игру</button>
-          <button class="btn btn--secondary btn_stop" disabled>Завершить игру</button>
-        </form>
+  <div class="main-content">
+    <div class="container">
+      <section class="main">
+        <form action="" id="game">
+          <div class="choose">
+            <h2 class="section-title">Настройки:</h2>
+            <fieldset class="choose__size">
+              <legend class="section-subtitle">Выберите размер поля:</legend>
+              <label>
+                <input type="radio" name="size" value="three" checked>
+                3х3
+              </label>
+              <label>
+                <input type="radio" name="size" value="five">
+                5х5
+              </label>
+            </fieldset>
+            <fieldset class="choose__player">
+              <legend class="section-subtitle">Первыми делают ход:</legend>
+              <label>
+                <input type="radio" name="player" value="x" checked>
+                Крестики (X)
+              </label>
+              <label>
+                <input type="radio" name="player" value="zero">
+                Нолики (O)
+              </label>
+            </fieldset>
+          </div>
+            <button class="btn btn--primary btn__start" type="submit">Начать игру</button>
+            <button class="btn btn--secondary btn__stop" disabled>Завершить игру</button>
+          </form>
+      </section>
+    </div>
+
+    <section class="one-game">
+      <div class="container">
+        <div class="area" hidden>
+          <div class="cell" pos="1"></div>
+          <div class="cell" pos="2"></div>
+          <div class="cell" pos="3"></div>
+          <div class="cell" pos="4"></div>
+          <div class="cell" pos="5"></div>
+          <div class="cell" pos="6"></div>
+          <div class="cell" pos="7"></div>
+          <div class="cell" pos="8"></div>
+          <div class="cell" pos="9"></div>
+        </div>  
+        <div class="area-big" hidden>
+          <div class="cell-big" pos="1"></div>
+          <div class="cell-big" pos="2"></div>
+          <div class="cell-big" pos="3"></div>
+          <div class="cell-big" pos="4"></div>
+          <div class="cell-big" pos="5"></div>
+          <div class="cell-big" pos="6"></div>
+          <div class="cell-big" pos="7"></div>
+          <div class="cell-big" pos="8"></div>
+          <div class="cell-big" pos="9"></div>
+          <div class="cell-big" pos="10"></div>
+          <div class="cell-big" pos="11"></div>
+          <div class="cell-big" pos="12"></div>
+          <div class="cell-big" pos="13"></div>
+          <div class="cell-big" pos="14"></div>
+          <div class="cell-big" pos="15"></div>
+          <div class="cell-big" pos="16"></div>
+          <div class="cell-big" pos="17"></div>
+          <div class="cell-big" pos="18"></div>
+          <div class="cell-big" pos="19"></div>
+          <div class="cell-big" pos="20"></div>
+          <div class="cell-big" pos="21"></div>
+          <div class="cell-big" pos="22"></div>
+          <div class="cell-big" pos="23"></div>
+          <div class="cell-big" pos="24"></div>
+          <div class="cell-big" pos="25"></div>
+        </div>  
+        <div class="options" hidden>
+          <div class="currentPlayer">
+            <span>Сейчас ходит: <span id="curPlyr">1ый игрок</span></span>
+          </div>  
+          <div class="stat">
+                <h3 class="section-subtitle">Статистика:</h3>
+                <div class="row">
+                    <span>Крестики (X):</span>
+                    <span id="statX">0</span>
+                </div>
+                <div class="row">
+                    <span>Нолики (О):</span>
+                    <span id="statO">0</span>
+                </div>
+                <div class="row">
+                    <span>Ничьи:</span>
+                    <span id="statD">0</span>
+                </div>
+          </div>
+      </div>
+      </div>
     </section>
   </div>
-        <section class="section--one_game_3x3">
-          <div class="container">
-            <div class="area" hidden>
-              <div class="cell" pos="1"></div>
-              <div class="cell" pos="2"></div>
-              <div class="cell" pos="3"></div>
-              <div class="cell" pos="4"></div>
-              <div class="cell" pos="5"></div>
-              <div class="cell" pos="6"></div>
-              <div class="cell" pos="7"></div>
-              <div class="cell" pos="8"></div>
-              <div class="cell" pos="9"></div>
-            </div>
-
-            <div class="area-big" hidden>
-              <div class="cell-big" pos="1"></div>
-              <div class="cell-big" pos="2"></div>
-              <div class="cell-big" pos="3"></div>
-              <div class="cell-big" pos="4"></div>
-              <div class="cell-big" pos="5"></div>
-              <div class="cell-big" pos="6"></div>
-              <div class="cell-big" pos="7"></div>
-              <div class="cell-big" pos="8"></div>
-              <div class="cell-big" pos="9"></div>
-              <div class="cell-big" pos="10"></div>
-              <div class="cell-big" pos="11"></div>
-              <div class="cell-big" pos="12"></div>
-              <div class="cell-big" pos="13"></div>
-              <div class="cell-big" pos="14"></div>
-              <div class="cell-big" pos="15"></div>
-              <div class="cell-big" pos="16"></div>
-              <div class="cell-big" pos="17"></div>
-              <div class="cell-big" pos="18"></div>
-              <div class="cell-big" pos="19"></div>
-              <div class="cell-big" pos="20"></div>
-              <div class="cell-big" pos="21"></div>
-              <div class="cell-big" pos="22"></div>
-              <div class="cell-big" pos="23"></div>
-              <div class="cell-big" pos="24"></div>
-              <div class="cell-big" pos="25"></div>
-            </div>
-
-            <div class="options" hidden>
-              <div class="currentPlayer">
-                <span>Сейчас ходит: <span id="curPlyr">1ый игрок</span></span>
-              </div>
-
-              <div class="stat">
-                
-                    <h3 class="section-subtitle">Статистика:</h3>
-                    <div class="row">
-                        <span>Крестики (X):</span>
-                        <span id="statX">0</span>
-                    </div>
-                    <div class="row">
-                        <span>Нолики (О):</span>
-                        <span id="statO">0</span>
-                    </div>
-                    <div class="row">
-                        <span>Ничьи:</span>
-                        <span id="statD">0</span>
-                    </div>
-                
-              </div>
-          </div>
-          </div>
-        </section>
-
 
     <footer></footer>
     

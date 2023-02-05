@@ -1,5 +1,5 @@
- let startGame = document.querySelector('.btn_start');
- let stopGame = document.querySelector('.btn_stop');
+ let startGame = document.querySelector('.btn__start');
+ let stopGame = document.querySelector('.btn__stop');
  let cell = document.querySelectorAll('.cell');
  let cellBig = document.querySelectorAll('.cell-big');
  let oneGame = document.querySelector('.area');
@@ -8,8 +8,8 @@
  let currentPlayer = document.querySelector('#curPlyr');
 
  let choose = document.querySelector('.choose');
- let chooseSize = document.querySelector('.choose--size');
- let choosePlayer = document.querySelector('.choose--player');
+ let chooseSize = document.querySelector('.choose__size');
+ let choosePlayer = document.querySelector('.choose__player');
 
  
  const game = document.querySelector('#game');
@@ -99,8 +99,8 @@ stopGame.addEventListener('click',restartPage);
    startGame.setAttribute('disabled',true);
    stopGame.removeAttribute('disabled');
    choose.setAttribute('hidden',true);
-   chooseSize.setAttribute('hidden',true);
-   choosePlayer.setAttribute('hidden',true);
+  //  chooseSize.setAttribute('hidden',true);
+  //  choosePlayer.setAttribute('hidden',true);
  }
  function toggleStop () {
    oneGame.setAttribute('hidden',true);

@@ -3,6 +3,11 @@
   .container {
     padding-left: 70px;
   }
+  
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+  }
 
 }
 
@@ -13,87 +18,7 @@
 
   /* Главная */
 
-  .container {
-    padding: 0 ;
-    width: 100%;
-  }
-
-  .adapted__container {
-    padding: 0 15px;
-  }
-
-  .adapted__container h2 {
-    max-width: 420px;
-  }
-
-   .sidebar,
-  .page-header__nav {
-    display: none; 
-    position: absolute;
-
-    background-color: var(--color-dark);
-  }
-
-  .sidebar__column {
-    display: block;
-    padding: 20px;
-  }
-
-  .column-menu {
-    display: block;
-  }
-
-  .page-header__toggle {
-    display: block;
-  } 
-
-  .page-header__col-menu {
-    display: none; 
-    position: absolute;
-    width: 272px;
-    height: 402px;
-    background-color: var(--color-dark);
-    padding: 35px;
-  }
-
-  .page-header__col-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .page-header__col-list a{
-    font-size: 14px;
-
-  }
-
-  .page-header__btn {
-    width: 220px;
-    margin-top: 15px;
-  }
-  .page-header__col-list a:hover {
-    color: var(--color-light);
-
-  }
-
-  .page-header__toggle.is-active + .page-header__col-menu{
-    display: block;
-  }
-
-  .services__banner {
-    width: 526px;
-    height: 791px;
-  }
-
-  .service__item {
-    width: 444px;
-    height: 174px;
-  }
-
-  .events__item img {
-    width: 450px;
-    height: 414px;
-  }
+  
 
   
 }
@@ -262,14 +187,7 @@
 @media screen and (max-width: 450px) {
   /* На устройства 324px*/
 
-  /* Главная */
-
-
   .section-title {
-    font-size: 34px;
-  }
-
-  .page-header__heading{
     font-size: 34px;
   }
 
@@ -287,21 +205,6 @@
   }
 
   .small-text {
-    margin-top: 10px;
-  }
-
-  .events__item img {
-  width: 300px;
-  height: 250px;
-  }
-
-  .events__info {
-    width: 250px;
-    height: 231px;
-    left: 28px;
-  }
-
-  .events__btn {
     margin-top: 10px;
   }
 
