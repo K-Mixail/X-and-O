@@ -217,9 +217,11 @@ label {
     color: #a91113;
 }
 
-.cell:hover {
+.cell:hover,
+.cell-big:hover {
     background-color: #fff;
 }
+
 
 .currentPlayer {
     margin-top: 15px;
