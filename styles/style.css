@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Georgia', sans-serif;
     background-color: var(--color-white);
     color: var(--color-dark); 
     margin: 0;   
@@ -163,11 +163,12 @@ ul {
 /*СВОЙСТВА ДЛЯ САМОЙ СТРАНИЦЫ*/
 .header {
     background-color: #d8a925;
-    height: 100px;
+    height: 80px;
 }
 
 .main {
-    margin-top: 50px;   
+    margin-top: 30px;
+    margin-bottom: 30px;   
 }
 
 fieldset {
@@ -184,10 +185,6 @@ label {
 }
 
 /* Игровое поле */
-section {
-    margin-bottom: 50px;
-}
-
 .area {
     width: 152px;
     border: 1px solid  #353394; 
@@ -237,4 +234,10 @@ section {
     width: 160px;
     text-align: center;
 
+}
+
+
+form {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
