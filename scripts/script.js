@@ -6,6 +6,11 @@
  let oneGameBig = document.querySelector('.area-big');
  let options = document.querySelector('.options');
  let currentPlayer = document.querySelector('#curPlyr');
+
+ let choose = document.querySelector('.choose');
+ let chooseSize = document.querySelector('.choose--size');
+ let choosePlayer = document.querySelector('.choose--player');
+
  
  const game = document.querySelector('#game');
  game.addEventListener('submit', (event) => {
@@ -92,8 +97,9 @@
  stopGame.addEventListener('click',clear,true);
  stopGame.addEventListener('click',clearBig,true);
 
-stopGame.addEventListener('click',restartPage);
 
+ //перезагрузка стр. при стопе
+stopGame.addEventListener('click',restartPage);
  function restartPage () {
   location.reload(); return false;
  }
@@ -104,6 +110,9 @@ stopGame.addEventListener('click',restartPage);
    options.removeAttribute('hidden');
    startGame.setAttribute('disabled',true);
    stopGame.removeAttribute('disabled');
+   choose.setAttribute('hidden',true);
+   chooseSize.setAttribute('hidden',true);
+   choosePlayer.setAttribute('hidden',true);
  }
  function toggleStop () {
    oneGame.setAttribute('hidden',true);

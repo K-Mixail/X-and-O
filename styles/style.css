@@ -201,6 +201,10 @@ a {
     height: 100px;
 }
 
+.main {
+    margin-top: 50px;   
+}
+
 fieldset {
     border: none;
     margin-bottom: 20px;

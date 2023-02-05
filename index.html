@@ -26,61 +26,36 @@
   </header>
 
   <div class="container">
-    <section>
-      <h2>Настройки:</h2>
+    <section class="main">
       <form action="" id="game">
-        <fieldset>
-          <legend class="section-subtitle">Выберите размер поля:</legend>
-          <label>
-            <input type="radio" name="size" value="three" checked>
-            3х3
-          </label>
-          <label>
-            <input type="radio" name="size" value="five">
-            5х5
-          </label>
-        </fieldset>
-        <fieldset>
-          <legend class="section-subtitle">Первым делают ход:</legend>
-          <label>
-            <input type="radio" name="player" value="x" checked>
-            Х
-          </label>
-          <label>
-            <input type="radio" name="player" value="zero">
-            0
-          </label>
-        </fieldset>
-        <!-- <fieldset>
-          <legend class="section-subtitle">Выберите режим игры:</legend>
-          <label>
-            <input type="radio" name="type" id="ONE-game" checked>
-            Одиночная игра
-          </label>
-          <label>
-            <input type="radio" name="type" id="PC-game">
-            Игра с ПК
-          </label>
-        </fieldset>
-          <fieldset id="choose-lvl" hidden>
-              <legend class="section-subtitle">Выберите уровень сложности:</legend>
-              <label>
-                <input type="radio" name="leve" checked>
-                Простой
-              </label>
-              <label>
-                <input type="radio" name="leve">
-                Средний
-              </label>
-              <label>
-                <input type="radio" name="leve">
-                Тяжелый
-              </label>
-          </fieldset> -->
+        <div class="choose">
+          <h2>Настройки:</h2>
+          <fieldset class="choose--size">
+            <legend class="section-subtitle">Выберите размер поля:</legend>
+            <label>
+              <input type="radio" name="size" value="three" checked>
+              3х3
+            </label>
+            <label>
+              <input type="radio" name="size" value="five">
+              5х5
+            </label>
+          </fieldset>
+          <fieldset class="choose--player">
+            <legend class="section-subtitle">Первыми делают ход:</legend>
+            <label>
+              <input type="radio" name="player" value="x" checked>
+              Х
+            </label>
+            <label>
+              <input type="radio" name="player" value="zero">
+              O
+            </label>
+          </fieldset>
+        </div>
           <button class="btn btn--primary btn_start" type="submit">Начать игру</button>
           <button class="btn btn--secondary btn_stop" disabled>Завершить игру</button>
         </form>
-
     </section>
   </div>
         <section class="section--one_game_3x3">
