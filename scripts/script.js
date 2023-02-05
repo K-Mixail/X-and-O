@@ -18,8 +18,8 @@
    const data = new FormData(event.target);
    const size = data.get('size');
    const player = data.get('player');
-   console.log(size);
-   console.log(player);
+  //  console.log(size);
+  //  console.log(player);
    toggleStart();
    if(size === 'three') {
        if (player === 'x') {
@@ -82,8 +82,8 @@
  
  
  stopGame.addEventListener('click',toggleStop);
- stopGame.addEventListener('click',clear,true);
- stopGame.addEventListener('click',clearBig,true);
+ //stopGame.addEventListener('click',clear,true);
+ //stopGame.addEventListener('click',clearBig,true);
 
 
  //перезагрузка стр. при стопе
@@ -109,14 +109,15 @@ stopGame.addEventListener('click',restartPage);
    stopGame.setAttribute('disabled',true);
    startGame.removeAttribute('disabled');
  }
- function clear () {    
+
+
+ /* function clear () {    
    for(let i = 0; i < cell.length; i++) {
        cell[i].innerHTML = '';
    }
    document.querySelector('#statX').innerHTML = 0;
    document.querySelector('#statO').innerHTML = 0;
-   document.querySelector('#statD').innerHTML = 0;
-   
+   document.querySelector('#statD').innerHTML = 0;   
  }
  
  function clearBig () {    
@@ -126,7 +127,8 @@ stopGame.addEventListener('click',restartPage);
    document.querySelector('#statX').innerHTML = 0;
    document.querySelector('#statO').innerHTML = 0;
    document.querySelector('#statD').innerHTML = 0;
- }
+ } */
+
  
  // ******************** ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
  function threeX () { 

@@ -27,18 +27,6 @@ body {
     margin: 0 auto;   
 }
 
-.padding-left {
-    padding-left: 30px;
-}
-
-.section-padding {
-    padding-top: 50px;
-    padding-bottom: 120px;
-}
-
-.section-margin {
-    margin-bottom: 130px;
-}
 
 /* font-size for title */
 .title {
@@ -58,13 +46,6 @@ body {
     margin: 0;
     padding: 0 0 50px;  /*отступ снизу*/
 }
-.page-header__heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 60px;
-    margin: 0;
-}
 
 .section-subtitle {
     font-family: 'Cormorant Garamond', serif;
@@ -73,25 +54,12 @@ body {
     line-height: 27px;
 }
 
-.section-subtitle-big {            
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
-}
 
 /*font-size for text*/
 .small-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 130%;
-}
-
-.small-text--grey {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 130%;
-    color: #A8A2A2;
 }
 
 .medium-text {
@@ -144,11 +112,6 @@ ul {
     padding: 0;
     list-style-type: none;   
     text-decoration: none;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-white);
 }
 
 /* button */
@@ -225,13 +188,14 @@ section {
 
 .area {
     width: 152px;
-    border: 1px solid var(--color-dark); 
+    border: 1px solid  #353394; 
     font-size: 0px; /*зануляем отступы между клетками*/
 }
 
 .area-big {
-    width: 253px;
-    border: 1px solid var(--color-dark); 
+    width: 252px;
+    /* border: 1px solid  #943352;   */
+    border: 1px solid  #353394;  
     font-size: 0px; /*зануляем отступы между клетками*/
 }
 
@@ -240,12 +204,14 @@ section {
     width: 50px;    
     height: 50px;
     line-height: 50px;
-    border: 1px solid var(--color-dark); 
+    /* border: 1px solid  #943352;   */
+    border: 1px solid #353394; 
     display: inline-block; /*блоки выстраиваются из вертикального ряда в сетку 3х3*/
     font-size: 26px; /*размер керстика/нолика*/
     text-align: center;
     vertical-align: middle; /*чтобы после нажатия на ячейку, не было смещений*/
     cursor: pointer;
+    color: #a91113;
 }
 
 .cell:hover {
@@ -255,4 +221,8 @@ section {
 .currentPlayer {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+td {
+    width: 120px;
 }
