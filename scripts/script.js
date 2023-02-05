@@ -150,7 +150,8 @@ stopGame.addEventListener('click',restartPage);
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
-       alert("Ячейка занята");
+       console.log("Ячейка занята");
+       //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -232,7 +233,8 @@ stopGame.addEventListener('click',restartPage);
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
-       alert("Ячейка занята");
+      console.log("Ячейка занята");
+      //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -314,7 +316,8 @@ stopGame.addEventListener('click',restartPage);
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
-       alert("Ячейка занята");
+      console.log("Ячейка занята");
+      //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -397,7 +400,8 @@ stopGame.addEventListener('click',restartPage);
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
-       alert("Ячейка занята");
+      console.log("Ячейка занята");
+      //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
