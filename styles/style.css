@@ -214,14 +214,12 @@ label {
     text-align: center;
     vertical-align: middle; /*чтобы после нажатия на ячейку, не было смещений*/
     cursor: pointer;
-    color: #a91113;
 }
 
 .cell:hover,
 .cell-big:hover {
     background-color: #fff;
 }
-
 
 .currentPlayer {
     margin-top: 15px;
@@ -242,8 +240,10 @@ label {
 
 }
 
+.color-x {
+    color: #78191a;
+}
 
-form {
-    margin-bottom: 0;
-    padding-bottom: 0;
+.color-o {
+    color: #1a5c2f;
 }

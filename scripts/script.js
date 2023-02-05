@@ -152,6 +152,8 @@ stopGame.addEventListener('click',restartPage);
      } else {
        console.log("Ячейка занята");
        //alert("Ячейка занята");
+       //this.style.color = "green";
+       //this.setTimeout(this.style.backgroundColor = "#a343af", 50020);
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -178,8 +180,12 @@ stopGame.addEventListener('click',restartPage);
      } 
  
      if (player == "x") {
-       player = "o";
-     } else player = "x";
+      this.style.color = "#78191a";
+      player = "o";
+     } else {
+      this.style.color = "#1a5c2f";
+      player = "x";
+    }
  
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
@@ -258,10 +264,15 @@ stopGame.addEventListener('click',restartPage);
            restart("Ничья");
            player = "x";
        }
-     } 
+     }
+
      if (player == "x") {
-       player = "o";
-     } else player = "x";
+      this.style.color = "#78191a";
+      player = "o";
+     } else {
+      this.style.color = "#1a5c2f";
+      player = "x";
+    }
  
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
@@ -344,8 +355,12 @@ stopGame.addEventListener('click',restartPage);
      } 
  
      if (player == "x") {
-       player = "o";
-     } else player = "x";
+      this.style.color = "#78191a";
+      player = "o";
+     } else {
+      this.style.color = "#1a5c2f";
+      player = "x";
+    }
  
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
@@ -427,9 +442,13 @@ stopGame.addEventListener('click',restartPage);
        }
      } 
  
-     if (player == "o") {
-       player = "x";
-     } else player = "o";
+     if (player == "x") {
+      this.style.color = "#78191a";
+      player = "o";
+     } else {
+      this.style.color = "#1a5c2f";
+      player = "x";
+    }
  
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
