@@ -140,7 +140,7 @@ stopGame.addEventListener('click',restartPage);
      'd': 0  
    }
    // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
-   for (let i = 0; i < cell.length; i++) {
+   for (let i = 0; i <= cell.length; i++) {
      cell[i].addEventListener('click', cellClick, true);
    }
  
@@ -181,9 +181,13 @@ stopGame.addEventListener('click',restartPage);
  
      if (player == "x") {
       this.style.color = "#78191a";
+      this.style.cursor = "default";
+      //this.style.backgroundColor="transparent";
       player = "o";
      } else {
       this.style.color = "#1a5c2f";
+      this.style.cursor = "default";
+      //this.style.backgroundColor="transparent";
       player = "x";
     }
  
@@ -207,8 +211,10 @@ stopGame.addEventListener('click',restartPage);
  
    function restart(text) {    
      alert(text);
-     for(let i = 0; i < cell.length; i++) {
+     for(let i = 0; i <= cell.length; i++) {
          cell[i].innerHTML = '';
+         cell[i].style.cursor = "pointer";
+         //cell[i].style.backgroundColor="initial";
      }
      updateStat();
    }
@@ -268,9 +274,11 @@ stopGame.addEventListener('click',restartPage);
 
      if (player == "x") {
       this.style.color = "#78191a";
+      this.style.cursor = "default";
       player = "o";
      } else {
       this.style.color = "#1a5c2f";
+      this.style.cursor = "default";
       player = "x";
     }
  
@@ -296,6 +304,7 @@ stopGame.addEventListener('click',restartPage);
      alert(text);
      for(let i = 0; i < cell.length; i++) {
          cell[i].innerHTML = '';
+         cell[i].style.cursor = "pointer";
      }
      updateStat();
    }
@@ -356,9 +365,11 @@ stopGame.addEventListener('click',restartPage);
  
      if (player == "x") {
       this.style.color = "#78191a";
+      this.style.cursor = "default";
       player = "o";
      } else {
       this.style.color = "#1a5c2f";
+      this.style.cursor = "default";
       player = "x";
     }
  
@@ -384,6 +395,7 @@ stopGame.addEventListener('click',restartPage);
      alert(text);
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
+         cell[i].style.cursor = "pointer";
      }
      updateStat();
    }
@@ -444,9 +456,11 @@ stopGame.addEventListener('click',restartPage);
  
      if (player == "x") {
       this.style.color = "#78191a";
+      this.style.cursor = "default";
       player = "o";
      } else {
       this.style.color = "#1a5c2f";
+      this.style.cursor = "default";
       player = "x";
     }
  
@@ -472,6 +486,7 @@ stopGame.addEventListener('click',restartPage);
      alert(text);
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
+         cell[i].style.cursor = "pointer";
      }
      updateStat();
    }
