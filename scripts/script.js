@@ -20,8 +20,6 @@
    const data = new FormData(event.target);
    const size = data.get('size');
    const player = data.get('player');
-  //  console.log(size);
-  //  console.log(player);
    toggleStart();
    if(size === 'three') {
        if (player === 'x') {
@@ -102,8 +100,6 @@ stopGame.addEventListener('click',restartPage);
    stopGame.removeAttribute('disabled');
    choose.setAttribute('hidden',true);
    rules.setAttribute('hidden',true);
-  //  chooseSize.setAttribute('hidden',true);
-  //  choosePlayer.setAttribute('hidden',true);
  }
  function toggleStop () {
    oneGame.setAttribute('hidden',true);
@@ -192,8 +188,8 @@ stopGame.addEventListener('click',restartPage);
       this.style.cursor = "default";
       //this.style.backgroundColor="transparent";
       player = "x";
-    }
- 
+    } 
+    
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
  

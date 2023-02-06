@@ -3,35 +3,27 @@
  
 }
 
-
-
-
-
 @media screen and (max-width: 754px) {
   /* На устройства 480px*/
 
   .rules {
     width: 400px;
   }
-
-
 }
-
-
 
 
 @media screen and (max-width: 450px) {
   /* На устройства 324px*/
   .title {
-    font-size: 30px;
+    font-size: 28px;
   }
   
   .section-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .section-subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .rules {
