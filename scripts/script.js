@@ -11,6 +11,8 @@
  let chooseSize = document.querySelector('.choose__size');
  let choosePlayer = document.querySelector('.choose__player');
 
+ let rules = document.querySelector('.js-rules');
+
  
  const game = document.querySelector('#game');
  game.addEventListener('submit', (event) => {
@@ -99,6 +101,7 @@ stopGame.addEventListener('click',restartPage);
    startGame.setAttribute('disabled',true);
    stopGame.removeAttribute('disabled');
    choose.setAttribute('hidden',true);
+   rules.setAttribute('hidden',true);
   //  chooseSize.setAttribute('hidden',true);
   //  choosePlayer.setAttribute('hidden',true);
  }
