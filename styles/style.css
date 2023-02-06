@@ -184,7 +184,11 @@ legend {
     margin-bottom: 10px;
 }
 
-label {
+.choose__size label:not(:last-child) {
+    margin-right: 50px;
+}
+
+.choose__player label:not(:last-child) {
     margin-right: 50px;
 }
 
@@ -234,8 +238,7 @@ label {
 .stat {
     border: 1px solid #353394; 
     width: 160px;
-    text-align: center;
-
+    text-align: center; 
 }
 
 .color-x {

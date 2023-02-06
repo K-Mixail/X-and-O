@@ -27,11 +27,18 @@
   }
   
   .section-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .section-subtitle {
     font-size: 18px;
   }
 
+  .rules {
+    width: 340px;
+  }
+  
+  footer {
+    display: none;
+  }
 }
