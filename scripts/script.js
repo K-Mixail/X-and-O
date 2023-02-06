@@ -139,7 +139,7 @@ stopGame.addEventListener('click',restartPage);
      'd': 0  
    }
    // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
-   for (let i = 0; i <= cell.length; i++) {
+   for (let i = 0; i < cell.length; i++) {
      cell[i].addEventListener('click', cellClick, true);
    }
  
@@ -189,7 +189,7 @@ stopGame.addEventListener('click',restartPage);
       //this.style.backgroundColor="transparent";
       player = "x";
     } 
-    
+
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
    }
  
@@ -210,7 +210,7 @@ stopGame.addEventListener('click',restartPage);
  
    function restart(text) {    
      alert(text);
-     for(let i = 0; i <= cell.length; i++) {
+     for(let i = 0; i < cell.length; i++) {
          cell[i].innerHTML = '';
          cell[i].style.cursor = "pointer";
          //cell[i].style.backgroundColor="initial";
@@ -352,8 +352,8 @@ stopGame.addEventListener('click',restartPage);
        player = "o" ;  
      } else {
        var draw = true;
-       for(var i in cell) {
-           if(cell[i].innerHTML == '') draw = false;
+       for(var i in cellBig) {
+           if(cellBig[i].innerHTML == '') draw = false;
        }
        if(draw) {
            stat.d += 1;
@@ -394,7 +394,7 @@ stopGame.addEventListener('click',restartPage);
      alert(text);
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
-         cell[i].style.cursor = "pointer";
+         cellBig[i].style.cursor = "pointer";
      }
      updateStat();
    }
@@ -443,8 +443,8 @@ stopGame.addEventListener('click',restartPage);
        player = "x";  
      } else {
        var draw = true;
-       for(var i in cell) {
-           if(cell[i].innerHTML == '') draw = false;
+       for(var i in cellBig) {
+           if(cellBig[i].innerHTML == '') draw = false;
        }
        if(draw) {
            stat.d += 1;
@@ -485,7 +485,7 @@ stopGame.addEventListener('click',restartPage);
      alert(text);
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
-         cell[i].style.cursor = "pointer";
+         cellBig[i].style.cursor = "pointer";
      }
      updateStat();
    }

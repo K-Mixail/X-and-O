@@ -65,45 +65,6 @@ body {
     line-height: 130%;
 }
 
-/* flex */
-.flex {
-    display: flex;
-}
-
-.flex-sb {
-    display: flex;
-    justify-content: space-between;
-}
-
-.flex-ai-center {
-    display: flex;
-    align-items: center;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-column-sb {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.flex-column-ai-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* clear */
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;   
-    text-decoration: none;
-}
 
 /* button */
 .btn {
@@ -121,28 +82,18 @@ ul {
 
 .btn--primary {
     background-color: #589eb4;
-    cursor: pointer;
 }
 
 .btn--secondary {
     background-color: #e97917;
 }
 
-.btn--primary:hover {
-    border: 1px solid #EFEFEF;
-}
-
+.btn--primary:hover,
 .btn--secondary:hover {
     border: 1px solid #EFEFEF;
 }
 
-.btn--primary:disabled {
-    background-color: #cecac7;
-    cursor: not-allowed;
-    border:none;
-    font-weight: 400;
-}
-
+.btn--primary:disabled,
 .btn--secondary:disabled {
     background-color: #cecac7;
     cursor: not-allowed;
@@ -171,13 +122,11 @@ legend {
     margin-bottom: 10px;
 }
 
-.choose__size label:not(:last-child) {
-    margin-right: 50px;
-}
-
+.choose__size label:not(:last-child),
 .choose__player label:not(:last-child) {
     margin-right: 50px;
 }
+
 
 /* Игровое поле */
 .area {
