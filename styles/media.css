@@ -1,8 +1,6 @@
 @media screen and (max-width: 1200px) {
   /* На устройства 1024px*/
-
-  /* Главная */
-  
+ 
 }
 
 
@@ -12,7 +10,9 @@
 @media screen and (max-width: 754px) {
   /* На устройства 480px*/
 
-  /* Главная */
+  .rules {
+    width: 400px;
+  }
 
 
 }
@@ -37,7 +37,7 @@
   .rules {
     width: 340px;
   }
-  
+
   footer {
     display: none;
   }
