@@ -246,4 +246,19 @@ label {
     color: #1a5c2f;
 }
 
-.rules {}
+.rules {
+    width: 450px;
+    margin: 0 auto;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    min-height: calc(100vh - 80px);
+  }
+
+footer {
+    background-color: #d8a925;
+    height: 80px;
+}
