@@ -26,7 +26,7 @@ body {
     font-family: 'Garamond';
     font-style: normal;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 130%;
     text-align: center;
 }
@@ -34,7 +34,7 @@ body {
 .section-title {
     font-family: 'Garamond', serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 130%;
     margin: 15px;
 }
