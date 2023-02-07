@@ -74,29 +74,28 @@ const winIndexBig = [
   [4,8,12,16],
   [10,14,18,22],
 ];
-
  
 stopGame.addEventListener('click',toggleStop);
 stopGame.addEventListener('click',restartPage);
- function restartPage () {
-  location.reload(); return false;
- }
- 
-  //реализация переключения кнопок и очистки полей/статистики
- function toggleStart () {
-   options.removeAttribute('hidden');
-   startGame.setAttribute('disabled',true);
-   stopGame.removeAttribute('disabled');
-   choose.setAttribute('hidden',true);
-   rules.setAttribute('hidden',true);
- }
- function toggleStop () {
-   options.setAttribute('hidden',true);
-   stopGame.setAttribute('disabled',true);
-   startGame.removeAttribute('disabled');
-   oneGame.setAttribute('hidden',true);
-   oneGameBig.setAttribute('hidden',true);   
- }
+function restartPage () {
+ location.reload(); return false;
+}
+
+ //переключение кнопок
+function toggleStart () {
+  options.removeAttribute('hidden');
+  startGame.setAttribute('disabled',true);
+  stopGame.removeAttribute('disabled');
+  choose.setAttribute('hidden',true);
+  rules.setAttribute('hidden',true);
+}
+function toggleStop () {
+  options.setAttribute('hidden',true);
+  stopGame.setAttribute('disabled',true);
+  startGame.removeAttribute('disabled');
+  oneGame.setAttribute('hidden',true);
+  oneGameBig.setAttribute('hidden',true);   
+}
 
 // Модальное окно
 let modal = document.getElementById("modal");
@@ -109,8 +108,8 @@ function none () {
   modal.style.display = "none";
 }
 
- // ******************** ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
- function threeX () { 
+ // 3х3 Первый ход КРЕСТИКОМ
+function threeX () { 
    oneGame.removeAttribute('hidden');
    let player = "x"; 
    let stat = {
@@ -202,10 +201,10 @@ function none () {
      document.querySelector('#statO').innerHTML = stat.o;
      document.querySelector('#statD').innerHTML = stat.d;
    }
- }
+}
  
- // *************************ОДИНОЧКА 3х3 Первый ход НОЛИКОМ
- function threeO () { 
+ // 3х3 Первый ход НОЛИКОМ
+function threeO () { 
    oneGame.removeAttribute('hidden');
    let player = "o"; 
    let stat = {
@@ -297,11 +296,11 @@ function none () {
      document.querySelector('#statO').innerHTML = stat.o;
      document.querySelector('#statD').innerHTML = stat.d;
    }
- }
+}
  
  
- // ******************** ОДИНОЧКА 5x5 Первый ход КРЕСТИКОМ
- function fiveX () { 
+ // 5x5 Первый ход КРЕСТИКОМ
+function fiveX () { 
    oneGameBig.removeAttribute('hidden');
    let player = "x"; 
    let stat = {
@@ -393,11 +392,11 @@ function none () {
      document.querySelector('#statO').innerHTML = stat.o;
      document.querySelector('#statD').innerHTML = stat.d;
    }
- }
+}
  
  
- // ******************** ОДИНОЧКА 5x5 Первый ход НОЛИКОМ
- function fiveO () { 
+ //5x5 Первый ход НОЛИКОМ
+function fiveO () { 
    oneGameBig.removeAttribute('hidden');
    let player = "o"; 
    let stat = {
@@ -489,5 +488,5 @@ function none () {
      document.querySelector('#statO').innerHTML = stat.o;
      document.querySelector('#statD').innerHTML = stat.d;
    }
- }
+}
 
