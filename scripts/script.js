@@ -128,7 +128,14 @@ stopGame.addEventListener('click',restartPage);
    document.querySelector('#statD').innerHTML = 0;
  } */
 
- 
+var modal = document.getElementById("modal");
+var span = document.querySelector(".close-modal");
+let messageWin = document.querySelector('#text');
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+
  // ******************** ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
  function threeX () { 
    oneGame.removeAttribute('hidden');
@@ -209,7 +216,13 @@ stopGame.addEventListener('click',restartPage);
    }
  
    function restart(text) {    
-     alert(text);
+    modal.style.display = "block";
+    messageWin.innerHTML = text;
+    window.onclick = function (event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+    }
      for(let i = 0; i < cell.length; i++) {
          cell[i].innerHTML = '';
          cell[i].style.cursor = "pointer";
@@ -300,7 +313,13 @@ stopGame.addEventListener('click',restartPage);
    }
  
    function restart(text) {    
-     alert(text);
+    modal.style.display = "block";
+    messageWin.innerHTML = text;
+    window.onclick = function (event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+    }
      for(let i = 0; i < cell.length; i++) {
          cell[i].innerHTML = '';
          cell[i].style.cursor = "pointer";
@@ -391,7 +410,13 @@ stopGame.addEventListener('click',restartPage);
    }
  
    function restart(text) {    
-     alert(text);
+    modal.style.display = "block";
+    messageWin.innerHTML = text;
+    window.onclick = function (event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+    }
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
          cellBig[i].style.cursor = "pointer";
@@ -482,7 +507,13 @@ stopGame.addEventListener('click',restartPage);
    }
  
    function restart(text) {    
-     alert(text);
+    modal.style.display = "block";
+    messageWin.innerHTML = text;
+    window.onclick = function (event) {
+       if (event.target == modal) {
+           modal.style.display = "none";
+       }
+    }
      for(let i = 0; i < cellBig.length; i++) {
          cellBig[i].innerHTML = '';
          cellBig[i].style.cursor = "pointer";
@@ -495,5 +526,4 @@ stopGame.addEventListener('click',restartPage);
      document.querySelector('#statD').innerHTML = stat.d;
    }
  }
- 
- 
+

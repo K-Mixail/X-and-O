@@ -202,3 +202,44 @@ footer {
     background-color: #d8a925;
     height: 80px;
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.modal-content {
+    background-color: #fce9e9;
+    margin: 15% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 200px;
+    z-index: 2;
+    position: relative;
+}
+.close {
+    color: rgb(50, 46, 46);
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.continue {
+    color: rgb(50, 46, 46);
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
