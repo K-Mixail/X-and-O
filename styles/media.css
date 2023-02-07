@@ -1,19 +1,10 @@
-@media screen and (max-width: 1200px) {
-  /* На устройства 1024px*/
- 
-}
-
 @media screen and (max-width: 754px) {
-  /* На устройства 480px*/
-
   .rules {
     width: 400px;
   }
 }
 
-
 @media screen and (max-width: 450px) {
-  /* На устройства 324px*/
   .title {
     font-size: 28px;
   }

@@ -1,87 +1,82 @@
- let startGame = document.querySelector('.btn__start');
- let stopGame = document.querySelector('.btn__stop');
- let cell = document.querySelectorAll('.cell');
- let cellBig = document.querySelectorAll('.cell-big');
- let oneGame = document.querySelector('.area');
- let oneGameBig = document.querySelector('.area-big');
- let options = document.querySelector('.options');
- let currentPlayer = document.querySelector('#curPlyr');
+let startGame = document.querySelector('.btn__start');
+let stopGame = document.querySelector('.btn__stop');
+let cell = document.querySelectorAll('.cell');
+let cellBig = document.querySelectorAll('.cell-big');
+let oneGame = document.querySelector('.area');
+let oneGameBig = document.querySelector('.area-big');
+let options = document.querySelector('.options');
+let currentPlayer = document.querySelector('#curPlyr');
+let choose = document.querySelector('.choose');
+let chooseSize = document.querySelector('.choose__size');
+let choosePlayer = document.querySelector('.choose__player');
+let rules = document.querySelector('.js-rules');
 
- let choose = document.querySelector('.choose');
- let chooseSize = document.querySelector('.choose__size');
- let choosePlayer = document.querySelector('.choose__player');
-
- let rules = document.querySelector('.js-rules');
-
- 
- const game = document.querySelector('#game');
- game.addEventListener('submit', (event) => {
-   event.preventDefault();
-   const data = new FormData(event.target);
-   const size = data.get('size');
-   const player = data.get('player');
-   toggleStart();
-   if(size === 'three') {
-       if (player === 'x') {
-         threeX(); 
-       } else if (player === 'zero') {
-         threeO();
-       }
-   } else if (size === 'five') {
+const game = document.querySelector('#game');
+game.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  const size = data.get('size');
+  const player = data.get('player');
+  toggleStart();
+  if(size === 'three') {
+      if (player === 'x') {
+        threeX(); 
+      } else if (player === 'zero') {
+        threeO();
+      }
+  } else if (size === 'five') {
      if (player === 'x') {
        fiveX();
      } else if (player === 'zero') {
        fiveO();
      }
    }
- })
+})
  
- const winIndex = [
-   [1,2,3],
-   [4,5,6],
-   [7,8,9],
-   [1,4,7],
-   [2,5,8],
-   [3,6,9],
-   [1,5,9],
-   [3,5,7],
- ];
- 
- const winIndexBig = [
-   [1,2,3,4],
-   [2,3,4,5],
-   [6,7,8,9],
-   [7,8,9,10],
-   [11,12,13,14],
-   [12,13,14,15],
-   [16,17,18,19],
-   [17,18,19,20],
-   [21,22,23,23],
-   [22,23,24,25],
-   [1,6,11,16],
-   [6,11,16,18],
-   [2,7,12,17],
-   [7,12,17,22],
-   [3,8,13,18],
-   [8,13,18,23],
-   [4,9,14,19],
-   [9,14,19,24],
-   [5,10,15,20],
-   [10,15,20,25],
-   [1,7,13,19],
-   [7,13,19,25],
-   [5,9,13,17],
-   [9,13,17,21],
-   [6,12,18,24],
-   [2,8,14,20],
-   [4,8,12,16],
-   [10,14,18,22],
- ];
- 
- 
- stopGame.addEventListener('click',toggleStop);
+const winIndex = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [1,4,7],
+  [2,5,8],
+  [3,6,9],
+  [1,5,9],
+  [3,5,7],
+];
 
- //перезагрузка стр. при стопе
+const winIndexBig = [
+  [1,2,3,4],
+  [2,3,4,5],
+  [6,7,8,9],
+  [7,8,9,10],
+  [11,12,13,14],
+  [12,13,14,15],
+  [16,17,18,19],
+  [17,18,19,20],
+  [21,22,23,23],
+  [22,23,24,25],
+  [1,6,11,16],
+  [6,11,16,18],
+  [2,7,12,17],
+  [7,12,17,22],
+  [3,8,13,18],
+  [8,13,18,23],
+  [4,9,14,19],
+  [9,14,19,24],
+  [5,10,15,20],
+  [10,15,20,25],
+  [1,7,13,19],
+  [7,13,19,25],
+  [5,9,13,17],
+  [9,13,17,21],
+  [6,12,18,24],
+  [2,8,14,20],
+  [4,8,12,16],
+  [10,14,18,22],
+];
+
+ 
+stopGame.addEventListener('click',toggleStop);
 stopGame.addEventListener('click',restartPage);
  function restartPage () {
   location.reload(); return false;
@@ -218,29 +213,29 @@ function none () {
      'o': 0,
      'd': 0  
    }
-   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
+
    for (let i = 0; i < cell.length; i++) {
      cell[i].addEventListener('click', cellClick, true);
    }
  
    function cellClick() {  
      let data = [];
-     //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
       return;
      }
-     //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+
      for(let i in cell) {
        if(cell[i].innerHTML == player) {
            data.push(parseInt(cell[i].getAttribute('pos')));
        }
      }
-     //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+
      if(checkWin(data)) {
-       stat[player] += 1; //добавляем 1 к статистике победившего игрока
+       stat[player] += 1; 
        restart("Выиграли: " + player.toUpperCase());
        player = "x";
      } else {
@@ -265,7 +260,7 @@ function none () {
       player = "x";
     }
  
-     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+     currentPlayer.innerHTML = player.toUpperCase();
    }
  
    function checkWin(data) {
@@ -314,29 +309,29 @@ function none () {
      'o': 0,
      'd': 0  
    }
-   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
+
    for (let i = 0; i < cellBig.length; i++) {
      cellBig[i].addEventListener('click', cellClick, true);
    }
  
    function cellClick() {  
      let data = [];
-     //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
        return;
      }
-     //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+
      for(let i in cellBig) {
        if(cellBig[i].innerHTML == player) {
            data.push(parseInt(cellBig[i].getAttribute('pos')));
        }
      }
-     //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+    
      if(checkWin(data)) {
-       stat[player] += 1; //добавляем 1 к статистике победившего игрока
+       stat[player] += 1; 
        restart("Выиграли: " + player.toUpperCase());
        player = "o" ;  
      } else {
@@ -361,7 +356,7 @@ function none () {
       player = "x";
     }
  
-     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+     currentPlayer.innerHTML = player.toUpperCase();
    }
  
    function checkWin(data) {
@@ -410,29 +405,29 @@ function none () {
      'o': 0,
      'd': 0  
    }
-   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
+
    for (let i = 0; i < cellBig.length; i++) {
      cellBig[i].addEventListener('click', cellClick, true);
    }
  
    function cellClick() {  
      let data = [];
-     //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+     
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
        return;
      }
-     //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+     
      for(let i in cellBig) {
        if(cellBig[i].innerHTML == player) {
            data.push(parseInt(cellBig[i].getAttribute('pos')));
        }
      }
-     //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+    
      if(checkWin(data)) {
-       stat[player] += 1; //добавляем 1 к статистике победившего игрока
+       stat[player] += 1; 
        restart("Выиграли: " + player.toUpperCase());
        player = "x";  
      } else {
@@ -457,7 +452,7 @@ function none () {
       player = "x";
     }
  
-     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+     currentPlayer.innerHTML = player.toUpperCase();
    }
  
    function checkWin(data) {
