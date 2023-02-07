@@ -222,7 +222,7 @@ footer {
 }
 .modal-content {
     position: relative;
-    top: 10%;
+    /* top: 10%; */
     background-color: #fefefe;
     margin: 20% auto;
     padding: 10px;
