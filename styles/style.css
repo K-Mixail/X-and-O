@@ -113,6 +113,8 @@ body {
 }
 
 fieldset {
+    margin-left: 0;
+    padding-left: 0;
     border: none;
     margin-bottom: 20px;
 }
