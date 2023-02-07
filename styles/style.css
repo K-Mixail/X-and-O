@@ -217,11 +217,13 @@ footer {
     z-index: 1;
 }
 .modal-content {
-    background-color: #fce9e9;
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 10px;
     border: 1px solid #888;
+    border-radius: 10px;
     width: 200px;
+    height: 100px;
     z-index: 2;
     position: relative;
 }
@@ -231,15 +233,20 @@ footer {
     right: 5px;
     top: 3px;
     font-size: 28px;
-    font-weight: bold;
     cursor: pointer;
 }
 .continue {
-    color: rgb(50, 46, 46);
     position: absolute;
-    right: 20px;
+    right: 40%;
     bottom: 5px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #827878;
+    border-radius: 2px;
+    background-color: #edbebe;
+    color: rgb(50, 46, 46);
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
 }

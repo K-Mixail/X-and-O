@@ -128,13 +128,17 @@ stopGame.addEventListener('click',restartPage);
    document.querySelector('#statD').innerHTML = 0;
  } */
 
-var modal = document.getElementById("modal");
-var span = document.querySelector(".close-modal");
+
+// Модальное окно
+let modal = document.getElementById("modal");
+let closeModal = document.querySelector(".close");
+let continueModal = document.querySelector(".continue");
 let messageWin = document.querySelector('#text');
-span.onclick = function () {
+closeModal.addEventListener('click', none);
+continueModal.addEventListener('click', none);
+function none () {
   modal.style.display = "none";
 }
-
 
  // ******************** ОДИНОЧКА 3х3 Первый ход КРЕСТИКОМ
  function threeX () { 
