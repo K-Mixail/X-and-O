@@ -104,7 +104,7 @@ body {
 /*СВОЙСТВА ДЛЯ САМОЙ СТРАНИЦЫ*/
 .header {
     height: 80px;
-    background-color: #d8a925;
+    background-color: #7db486;
 }
 
 .main {
@@ -243,5 +243,5 @@ label {
 
 footer {    
     height: 80px;
-    background-color: #d8a925;
+    background-color: #7db486;
 }
