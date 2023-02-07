@@ -175,7 +175,7 @@ function none () {
      //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
      if(checkWin(data)) {
        stat[player] += 1; //добавляем 1 к статистике победившего игрока
-       restart("Выиграл: " + player);
+       restart("Выиграли: " + player);
        player = "o" ;  
      } else {
        var draw = true;
@@ -274,7 +274,7 @@ function none () {
      //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
      if(checkWin(data)) {
        stat[player] += 1; //добавляем 1 к статистике победившего игрока
-       restart("Выиграл: " + player);
+       restart("Выиграли: " + player);
        player = "x";
      } else {
        var draw = true;
@@ -371,7 +371,7 @@ function none () {
      //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
      if(checkWin(data)) {
        stat[player] += 1; //добавляем 1 к статистике победившего игрока
-       restart("Выиграл: " + player);
+       restart("Выиграли: " + player);
        player = "o" ;  
      } else {
        var draw = true;
@@ -468,7 +468,7 @@ function none () {
      //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
      if(checkWin(data)) {
        stat[player] += 1; //добавляем 1 к статистике победившего игрока
-       restart("Выиграл: " + player);
+       restart("Выиграли: " + player);
        player = "x";  
      } else {
        var draw = true;
