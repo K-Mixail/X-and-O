@@ -11,7 +11,6 @@ body {
     margin: 0;   
 }
 
-/* layout */
 .container {
     width: 350px;
     margin: 0 auto;   
@@ -142,7 +141,7 @@ label {
 .area-big {
     width: 252px;
     border: 1px solid  #353394;  
-    font-size: 0px; /*зануляем отступы между клетками*/
+    font-size: 0px; 
 }
 
 .cell,
@@ -189,25 +188,7 @@ label {
     color: #1a5c2f;
 }
 
-.rules {
-    width: 700px;
-    margin: 0 auto;   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* text-align:justify; */
-}
-
-.content {
-    min-height: calc(100vh - 80px);
-  }
-
-footer {
-    background-color: #d8a925;
-    height: 80px;
-}
-
-
+/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -222,7 +203,6 @@ footer {
 }
 .modal-content {
     position: relative;
-    /* top: 10%; */
     background-color: #fefefe;
     margin: 20% auto;
     padding: 10px;
@@ -230,8 +210,7 @@ footer {
     border-radius: 10px;
     width: 200px;
     height: 100px;
-    z-index: 2;
-    
+    z-index: 2;    
 }
 .close {
     color: rgb(50, 46, 46);
@@ -247,11 +226,21 @@ footer {
     bottom: 5px;
     width: 60px;
     height: 30px;
-    /* border: 1px solid #827878;
-    border-radius: 2px;
-    background-color: #edbebe;
-    color: rgb(50, 46, 46);
-    font-size: 18px;
-    text-align: center;
-    cursor: pointer; */
+}
+
+.rules {
+    width: 700px;
+    margin: 0 auto;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    min-height: calc(100vh - 80px);
+}
+
+footer {
+    background-color: #d8a925;
+    height: 80px;
 }

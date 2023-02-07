@@ -36,7 +36,6 @@
    }
  })
  
- //массив с выигрышными положениями для 3х3
  const winIndex = [
    [1,2,3],
    [4,5,6],
@@ -48,7 +47,6 @@
    [3,5,7],
  ];
  
- //массив с выигрышными положениями для 5х5
  const winIndexBig = [
    [1,2,3,4],
    [2,3,4,5],
@@ -82,9 +80,6 @@
  
  
  stopGame.addEventListener('click',toggleStop);
- //stopGame.addEventListener('click',clear,true);
- //stopGame.addEventListener('click',clearBig,true);
-
 
  //перезагрузка стр. при стопе
 stopGame.addEventListener('click',restartPage);
@@ -92,8 +87,7 @@ stopGame.addEventListener('click',restartPage);
   location.reload(); return false;
  }
  
- 
- //реализация переключения кнопок и очистки полей/статистики
+  //реализация переключения кнопок и очистки полей/статистики
  function toggleStart () {
    options.removeAttribute('hidden');
    startGame.setAttribute('disabled',true);
@@ -102,32 +96,12 @@ stopGame.addEventListener('click',restartPage);
    rules.setAttribute('hidden',true);
  }
  function toggleStop () {
-   oneGame.setAttribute('hidden',true);
-   oneGameBig.setAttribute('hidden',true);
    options.setAttribute('hidden',true);
    stopGame.setAttribute('disabled',true);
    startGame.removeAttribute('disabled');
+   oneGame.setAttribute('hidden',true);
+   oneGameBig.setAttribute('hidden',true);   
  }
-
-
- /* function clear () {    
-   for(let i = 0; i < cell.length; i++) {
-       cell[i].innerHTML = '';
-   }
-   document.querySelector('#statX').innerHTML = 0;
-   document.querySelector('#statO').innerHTML = 0;
-   document.querySelector('#statD').innerHTML = 0;   
- }
- 
- function clearBig () {    
-   for(let i = 0; i < cellBig.length; i++) {
-       cellBig[i].innerHTML = '';
-   }
-   document.querySelector('#statX').innerHTML = 0;
-   document.querySelector('#statO').innerHTML = 0;
-   document.querySelector('#statD').innerHTML = 0;
- } */
-
 
 // Модальное окно
 let modal = document.getElementById("modal");
@@ -161,9 +135,6 @@ function none () {
        this.innerHTML = player;
      } else {
        console.log("Ячейка занята");
-       //alert("Ячейка занята");
-       //this.style.color = "green";
-       //this.setTimeout(this.style.backgroundColor = "#a343af", 50020);
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -192,17 +163,15 @@ function none () {
      if (player == "x") {
       this.style.color = "#78191a";
       this.style.cursor = "default";
-      //this.style.backgroundColor="transparent";
       player = "o";
      } else {
       this.style.color = "#1a5c2f";
       this.style.cursor = "default";
-      //this.style.backgroundColor="transparent";
       player = "x";
     } 
 
      currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
-   }
+  }
  
    function checkWin(data) {
      for(let i in winIndex) {
@@ -230,7 +199,6 @@ function none () {
      for(let i = 0; i < cell.length; i++) {
          cell[i].innerHTML = '';
          cell[i].style.cursor = "pointer";
-         //cell[i].style.backgroundColor="initial";
      }
      updateStat();
    }
@@ -262,8 +230,7 @@ function none () {
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
-      //alert("Ячейка занята");
-       return;
+      return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
      for(let i in cell) {
@@ -359,7 +326,6 @@ function none () {
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
-      //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
@@ -456,7 +422,6 @@ function none () {
        this.innerHTML = player;
      } else {
       console.log("Ячейка занята");
-      //alert("Ячейка занята");
        return;
      }
      //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
