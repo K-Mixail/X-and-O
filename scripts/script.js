@@ -7,8 +7,6 @@ let oneGameBig = document.querySelector('.area-big');
 let options = document.querySelector('.options');
 let currentPlayer = document.querySelector('#currentPlayer');
 let choose = document.querySelector('.choose');
-let chooseSize = document.querySelector('.choose__size');
-let choosePlayer = document.querySelector('.choose__player');
 let rules = document.querySelector('.js-rules');
 
 const game = document.querySelector('#game');
@@ -139,7 +137,7 @@ function threeX () {
      }
      //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
      if(checkWin(data)) {
-       stat[player] += 1; //добавляем 1 к статистике победившего игрока
+       stat[player] += 1; 
        restart("Выиграли: " + player.toUpperCase());
        player = "o" ;  
      } else {
@@ -298,7 +296,7 @@ function threeO () {
    }
 }
  
- 
+
  // 5x5 Первый ход КРЕСТИКОМ
 function fiveX () { 
    oneGameBig.removeAttribute('hidden');
