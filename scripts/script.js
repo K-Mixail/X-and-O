@@ -141,8 +141,8 @@ function threeX () {
        restart("Выиграли: " + player.toUpperCase());
        player = "o" ;  
      } else {
-       var draw = true;
-       for(var i in cell) {
+       let draw = true;
+       for(let i in cell) {
            if(cell[i].innerHTML == '') draw = false;
        }
        if(draw) {
@@ -236,8 +236,8 @@ function threeO () {
        restart("Выиграли: " + player.toUpperCase());
        player = "x";
      } else {
-       var draw = true;
-       for(var i in cell) {
+      let draw = true;
+       for(let i in cell) {
            if(cell[i].innerHTML == '') draw = false;
        }
        if(draw) {
@@ -332,8 +332,8 @@ function fiveX () {
        restart("Выиграли: " + player.toUpperCase());
        player = "o" ;  
      } else {
-       var draw = true;
-       for(var i in cellBig) {
+       let draw = true;
+       for(let i in cellBig) {
            if(cellBig[i].innerHTML == '') draw = false;
        }
        if(draw) {
@@ -428,8 +428,8 @@ function fiveO () {
        restart("Выиграли: " + player.toUpperCase());
        player = "x";  
      } else {
-       var draw = true;
-       for(var i in cellBig) {
+      let draw = true;
+       for(let i in cellBig) {
            if(cellBig[i].innerHTML == '') draw = false;
        }
        if(draw) {
