@@ -115,27 +115,26 @@ function threeX () {
      'o': 0,
      'd': 0  
    }
-   // добавляем каждой ячейки событие клика (по клику сработает функция cellClick)
    for (let i = 0; i < cell.length; i++) {
      cell[i].addEventListener('click', cellClick, true);
    }
  
    function cellClick() {  
      let data = [];
-     //если ячейка свободна, записываем в неё текущего игрока, если занята - выдаём сообщение
+
      if(!this.innerHTML) { 
        this.innerHTML = player;
      } else {
        console.log("Ячейка занята");
        return;
      }
-     //проходим по ячейкам и если в ячейке стоит позиция текущего игрока, добавляем эти данные в массив data
+
      for(let i in cell) {
        if(cell[i].innerHTML == player) {
            data.push(parseInt(cell[i].getAttribute('pos')));
        }
      }
-     //проверка текущего положения на выигрыш/ничью с помощью функции checkWin(data)
+
      if(checkWin(data)) {
        stat[player] += 1; 
        restart("Выиграли: " + player.toUpperCase());
@@ -162,7 +161,7 @@ function threeX () {
       player = "x";
     } 
 
-     currentPlayer.innerHTML = player.toUpperCase();//выводим игрока, который сейчас ходит
+     currentPlayer.innerHTML = player.toUpperCase();
   }
  
    function checkWin(data) {
